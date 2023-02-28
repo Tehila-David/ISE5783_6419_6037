@@ -1,2 +1,3 @@
-package primitives;public class Point {
+package primitives;
+public class Point {
 }
