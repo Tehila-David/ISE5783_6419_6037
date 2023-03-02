@@ -1,19 +1,37 @@
 package primitives;
 
+/**
+ * Represents a ray in 3D space.
+ */
 public class Ray {
-    final Point p0;
-    final Vector dir;
+    final private Point p0;
+    final private Vector dir;
 
-    public Ray(Vector vector,Point point)
-    {
-        this.p0=point;
-        this.dir=vector.normalize();
+    /**
+     * Constructs a new Ray object with the specified direction vector and starting point.
+     *
+     * @param vector The direction vector of the ray.
+     * @param point The starting point of the ray.
+     */
+    public Ray(Vector vector, Point point) {
+        this.p0 = point;
+        this.dir = vector.normalize();
     }
 
+    /**
+     * Returns the starting point of this ray.
+     *
+     * @return The starting point of this ray.
+     */
     public Point getP0() {
         return p0;
     }
 
+    /**
+     * Returns the normalized direction vector of this ray.
+     *
+     * @return The normalized direction vector of this ray.
+     */
     public Vector getDir() {
         return dir;
     }
@@ -22,9 +40,10 @@ public class Ray {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj instanceof Ray ray)
-            return this.p0.equals(ray.p0) && this.dir.equals(ray.dir) ;
+            return this.p0.equals(ray.p0) && this.dir.equals(ray.dir);
         return false;
     }
+
 
     @Override
     public String toString() {
