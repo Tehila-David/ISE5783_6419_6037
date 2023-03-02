@@ -1,13 +1,14 @@
-/**
- * The Cylinder class represents a cylinder in 3D space, defined by a center point, a radius, an axis ray, and a height.
- * It extends the Tube class.
- */
+
 package geometries;
 
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+/**
+ * The Cylinder class represents a cylinder in 3D space, defined by a center point, a radius, an axis ray, and a height.
+ * It extends the Tube class.
+ */
 public class Cylinder extends Tube {
     final private double height;
 

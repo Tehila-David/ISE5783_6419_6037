@@ -4,6 +4,10 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+/**
+ * The Tube class represents a tube in 3D space, defined by a center point, a radius, and an axis ray.
+ * It extends the RadialGeometry class.
+ */
 public class Tube extends RadialGeometry {
 
     /**
