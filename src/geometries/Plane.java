@@ -30,7 +30,9 @@ public class Plane{
      * @param p3 the third point on the plane
      */
     public Plane(Point p1, Point p2, Point p3) {
-        normal = p2.subtract(p1).crossProduct(p3.subtract(p1)).normalize();
+        Vector v1 = p2.subtract(p1);
+        Vector v2 = p3.subtract(p1);
+        normal = v1.crossProduct(v2).normalize();
         q0 = p1;
     }
 

@@ -25,10 +25,12 @@ public class Vector extends Point {
     /**
      * Constructs a new vector from the specified Double3 object.
      *
-     * @param vec the Double3 object to construct the vector from
+     * @param xyz the Double3 object to construct the vector from
      */
-    Vector(Double3 vec) {
-        this(vec.d1, vec.d2, vec.d3);
+    Vector(Double3 xyz) {
+        super(xyz);
+        if (this.xyz.equals(Double3.ZERO))
+            throw new IllegalArgumentException("vector cannot be zero");
     }
 
     /**
@@ -54,11 +56,11 @@ public class Vector extends Point {
     /**
      * Returns the dot product of this vector and the specified vector.
      *
-     * @param vec the vector to dot-multiply with this vector
+     * @param vector the vector to dot-multiply with this vector
      * @return the dot product of this vector and the specified vector
      */
-    public double dotProduct(Vector vec) {
-        return vec.xyz.d1 * xyz.d1 + vec.xyz.d2 * xyz.d2 + vec.xyz.d3 * xyz.d3;
+    public double dotProduct(Vector vector) {
+        return vector.xyz.d1 * xyz.d1 + vector.xyz.d2 * xyz.d2 + vector.xyz.d3 * xyz.d3;
     }
 
     /**
@@ -81,6 +83,7 @@ public class Vector extends Point {
      */
     public double lengthSquared() {
         return dotProduct(this);
+        //TODO: check to replace and calc here
     }
 
     /**
@@ -99,7 +102,8 @@ public class Vector extends Point {
      * @return a new vector that is the normalized version of this vector
      */
     public Vector normalize() {
-        return new Vector(this.xyz.d1 / this.length(), this.xyz.d2 / this.length(), this.xyz.d3 / this.length());
+        double length = this.length();
+        return new Vector(this.xyz.d1 / length, this.xyz.d2 / length, this.xyz.d3 / length);
     }
 
     @Override
