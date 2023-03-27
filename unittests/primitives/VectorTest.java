@@ -50,4 +50,5 @@ class VectorTest {
     @Test
     void testNormalize() {
     }
+    ////
 }
