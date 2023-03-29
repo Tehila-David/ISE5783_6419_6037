@@ -3,15 +3,22 @@ package primitives;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Unit tests for primitives.Vector class
+ * @author Yossi Cohen
+ */
 class VectorTest {
 
     @Test
     void testAdd() {
+        // ============ Equivalence Partitions Tests ==============
         Vector v1 = new Vector(1, 2, 3);
         Vector v2 = new Vector(1,1,1);
         assertEquals(v1, v2.add(new Vector(0, 1, 2)));
 
+        // =============== Boundary Values Tests ==================
         assertThrows(
                 IllegalArgumentException.class,
                 () -> v1.add(new Vector(-1, -2, -3)),
@@ -23,10 +30,18 @@ class VectorTest {
 
     @Test
     void testScale() {
+
     }
 
     @Test
     void testDotProduct() {
+
+        Vector v1 = new Vector(1, 0, -1);
+        Vector v2 = new Vector(1,1,1);
+        assertEquals(0,v1.dotProduct(v2),"ERROR: dotProduct() for orthogonal vectors is not zero");
+
+       // assertEquals (28,(v1.dotProduct(v2) + 28),);
+
     }
 
     @Test

@@ -1,6 +1,7 @@
 package geometries;
 
 import primitives.Point;
+import primitives.Vector;
 
 /**
  * The Triangle class represents a triangle in 3D space. It extends the Polygon class and is defined by three vertices.
@@ -18,12 +19,18 @@ public class Triangle extends Polygon {
         super(p1, p2, p3);
     }
 
+
+    public Vector getNormal(Point point) {
+        return null;
+    }
+
     @Override
     public String toString() {
         return super.toString() +
                 "vertices=" + vertices +
                 ", plane=" + plane;
     }
+
 
 }
 
