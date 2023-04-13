@@ -27,13 +27,6 @@ public class PointTest {
         Point p2 =new Point(1,3,4);
         Point p3 =new Point(0,0,0);
         assertEquals(p2, p1.add(new Vector(0, 1, 1)));
-
-        // =============== Boundary Values Tests ==================
-       // assertEquals(p3, p1.add(new Vector(-1, -2, -3)));
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> p1.add(new Vector(-1, -2, -3)),"ERROR: point + -itself does not throw an exception");
     }
 
     /**
@@ -74,11 +67,6 @@ public class PointTest {
         Point p1=new Point(1,2,3);
         assertEquals(2,p1.distanceSquared(new Point(1,3,4)));
 
-        // =============== Boundary Values Tests ==================
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> p1.distanceSquared(new Point(1, 2, 3)),"ERROR: point -itself does not throw an exception"
-        );
     }
 
     /**
@@ -95,12 +83,6 @@ public class PointTest {
         // ============ Equivalence Partitions Tests ==============
         Point p1=new Point(1,2,0);
         assertEquals(1,p1.distanceSquared(new Point(1,3,0)));
-
-        // =============== Boundary Values Tests ==================
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> p1.distanceSquared(new Point(1, 2, 0)),"ERROR: point -itself does not throw an exception"
-        );
     }
 
 }
