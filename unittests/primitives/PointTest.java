@@ -25,13 +25,15 @@ public class PointTest {
         // ============ Equivalence Partitions Tests ==============
         Point p1=new Point(1,2,3);
         Point p2 =new Point(1,3,4);
+        Point p3 =new Point(0,0,0);
         assertEquals(p2, p1.add(new Vector(0, 1, 1)));
 
         // =============== Boundary Values Tests ==================
+       // assertEquals(p3, p1.add(new Vector(-1, -2, -3)));
+
         assertThrows(
                 IllegalArgumentException.class,
-                () -> p1.add(new Vector(-1, -2, -3)),"ERROR: point + -itself does not throw an exception"
-        );
+                () -> p1.add(new Vector(-1, -2, -3)),"ERROR: point + -itself does not throw an exception");
     }
 
     /**
