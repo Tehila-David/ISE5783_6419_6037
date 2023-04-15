@@ -73,7 +73,8 @@ public final class Main {
         Vector u = v.normalize();
         if (!isZero(u.length() - 1))
             out.println("ERROR: the normalized vector is not a unit vector");
-        try { // test that the vectors are co-lined
+        try
+        { // test that the vectors are co-lined
             v.crossProduct(u);
             out.println("ERROR: the normalized vector is not parallel to the original one");
         } catch (Exception e) {}
