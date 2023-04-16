@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TriangleTest {
 
     @Test
-    void testGetNormal() {
+    void testGetNormal()
+    {
+
     }
 }

@@ -79,7 +79,7 @@ class VectorTest
     {
         // ============ Equivalence Partitions Tests ==============
         Vector v1 = new Vector(1, 2, 3);
-        assertEquals(3.7416, v1.length(), 0.001, "ERROR: lengthSquared() wrong value");
+        assertEquals(3.7416, v1.length(), 0.001, "ERROR: length() wrong value");
 
     }
 
