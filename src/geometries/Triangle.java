@@ -20,9 +20,9 @@ public class Triangle extends Polygon {
     }
 
 
-    public Vector getNormal(Point point) {
-        return null;
-    }
+  //  public Vector getNormal(Point point) {
+    //    return null;
+  //  }
 
     @Override
     public String toString() {

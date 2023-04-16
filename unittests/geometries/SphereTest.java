@@ -6,16 +6,22 @@ import primitives.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for geometries.Sphere class
+ */
 class SphereTest {
 
+    /**
+     * Test method for GetNormal
+     */
     @Test
     void testGetNormal()
     {
         // ============ Equivalence Partitions Tests ==============
-        Sphere sphere=new Sphere(2,new Point(1,2,3));
-        Vector normal=new Vector(0.0,0.0,-1.0);
+        Sphere sphere = new Sphere(2,new Point(1,2,3));
+        Vector normal = new Vector(0.0,0.0,-1.0);
         assertEquals(normal, sphere.getNormal(new Point(1,2,2)), "ERROR: GetNormal() wrong value");
-        assertEquals(1, sphere.getNormal(new Point(1,2,2)).length(), "ERROR: GetNormal() wrong value");
+        assertEquals(1, sphere.getNormal(new Point(1,2,2)).length(), "ERROR: length() wrong value");
 
     }
 }
