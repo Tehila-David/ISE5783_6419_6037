@@ -45,7 +45,7 @@ public class Tube extends RadialGeometry {
      */
     public Vector getNormal(Point point) {
         return null;
-    }//bonus
+    }
 
     @Override
     public String toString() {

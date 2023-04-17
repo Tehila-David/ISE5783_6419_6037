@@ -61,7 +61,7 @@ class VectorTest {
 
         // =============== Boundary Values Tests ==================
         //TC11:A test that checks whether a scalar product between 2 perpendicular vectors is equal to zero
-        assertEquals(0, v1.dotProduct(v2), "ERROR: dotProduct() for orthogonal vectors is not zero");
+        assertTrue(isZero(v1.dotProduct(v2)),"ERROR: dotProduct() for orthogonal vectors is not zero");
 
     }
 
@@ -74,7 +74,7 @@ class VectorTest {
         // ============ Equivalence Partitions Tests ==============
         Vector vr = v1.crossProduct(v2);
         //TC01:Test that length of cross-product is proper (orthogonal vectors taken for simplicity)
-        assertEquals(vr.length(),(v1.length() * v2.length()),0.777 ,"ERROR: crossProduct() wrong result length");
+        assertEquals(vr.length(),v1.length() * v2.length(),0.0001 ,"ERROR: crossProduct() wrong result length");
         // TC02: Test cross-product result orthogonality to its operands
         assertTrue(isZero(vr.dotProduct(v1)), "crossProduct() result is not orthogonal to 1st operand");
         assertTrue(isZero(vr.dotProduct(v2)), "crossProduct() result is not orthogonal to 2nd operand");
@@ -108,8 +108,8 @@ class VectorTest {
     {
         // ============ Equivalence Partitions Tests ==============
         //TC01:A test that checks that the length of the vector is correct
-        Vector v1 = new Vector(1, 2, 3);
-        assertEquals(3.7416, v1.length(), 0.001, "ERROR: length() wrong value");
+        Vector v1 = new Vector(0, 3, 4);
+        assertEquals(5, v1.length(), 0.001, "ERROR: length() wrong value");
 
     }
 
