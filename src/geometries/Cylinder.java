@@ -49,7 +49,7 @@ public class Cylinder extends Tube {
      * @return null, since a cylinder has no unique normal vector at any point
      */
     public Vector getNormal(Point point) {
-        return null;
+        return super.getNormal(point);
     }
 
 }

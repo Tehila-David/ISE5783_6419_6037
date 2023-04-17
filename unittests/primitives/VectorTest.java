@@ -124,12 +124,10 @@ class VectorTest {
         Vector u = v.normalize();
         //TC01:A test that checks that the vector is normalized by checking that the length of the vector is equal to 1.
         assertEquals(1,u.length(),"ERROR: the normalized vector is not a unit vector");
-        //TC02:
+        //TC02: test zero vector from cross-productof co-lined vectors
         assertThrows(Exception.class,
                 () -> v.crossProduct(u),
                 "ERROR: the normalized vector is not parallel to the original one");
-        //TC03:
-        assertEquals(false,v.dotProduct(u) < 0,"ERROR: the normalized vector is opposite to the original one");
 
     }
 

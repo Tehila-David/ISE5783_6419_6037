@@ -18,6 +18,7 @@ class TubeTest {
     @Test
     void testGetNormal()
     {
+        // get normal-bonus
         // ============ Equivalence Partitions Tests ==============
         Ray ray = new Ray(new Vector(1,2,3),new Point(1,1,1));
         Tube tube = new Tube(4.3,ray);
@@ -27,7 +28,7 @@ class TubeTest {
 
         // =============== Boundary Values Tests ==================
 
-        //ray.getP0();
+
     }
 
 }

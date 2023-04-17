@@ -26,7 +26,9 @@ class TriangleTest {
         Triangle triangle = new Triangle(p1,p2,p3);
         //Vector normal=new Vector(0.0,0.0,-1.0);
         Vector normal=new Vector(1.0,0.0,-0.0);
+        //Test if the method returns the normal
         assertEquals(normal, triangle.getNormal(new Point(1,2,2)), "ERROR: GetNormal() wrong value");
+        //Test if the normal vector is equal to 1
         assertEquals(1, triangle.getNormal(new Point(1,2,2)).length(), "ERROR: length() wrong value");
 
     }
