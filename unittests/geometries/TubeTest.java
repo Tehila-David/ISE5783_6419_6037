@@ -18,18 +18,21 @@ class TubeTest {
     @Test
     void testGetNormal()
     {
+        Ray ray = new Ray(new Vector(0, 0, 1),new Point(0, 0, 0));
+        Tube tube = new Tube(2, ray);
 
         // ============ Equivalence Partitions Tests ==============
-        //TC01: get normal-bonus
-        Ray ray = new Ray(new Vector(1,2,3),new Point(1,1,1));
-        Tube tube = new Tube(4.3,ray);
-        Vector normal = new Vector(0.0,0.0,-1.0);
-        assertEquals(normal, tube.getNormal(new Point(1,2,2)), "ERROR: GetNormal() wrong value");
-        assertEquals(1, tube.getNormal(new Point(1,2,2)).length(), "ERROR: length() wrong value");
+        // TC01: There is a simple single test here
+        assertEquals(0,tube.getNormal(new Point(2, 2, 10)).dotProduct(new Vector(0, 0, 1)),
+                "Bad normal to tube");
 
         // =============== Boundary Values Tests ==================
-        //TC11:
+        // TC11: Normal is orthogonal to the head of the axis Ray
+        assertEquals(0,tube.getNormal(new Point(2, 2, 0)).dotProduct(new Vector(0, 0, 1)),
+                "Bad normal to tube when the normal is orthogonal to the head of the axisRay");
 
     }
+
+
 
 }
