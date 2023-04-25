@@ -26,4 +26,10 @@ class SphereTest {
         assertEquals(1, sphere.getNormal(new Point(1,2,2)).length(), "ERROR: length() wrong value");
 
     }
+
+    @Test
+    void testfindIntersections() {
+
+    }
+
 }

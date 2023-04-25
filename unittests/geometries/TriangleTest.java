@@ -31,4 +31,10 @@ class TriangleTest {
         assertEquals(1, triangle.getNormal(new Point(1,2,2)).length(), "ERROR: length() wrong value");
 
     }
+
+    @Test
+    void testfindIntersections() {
+
+    }
+
 }

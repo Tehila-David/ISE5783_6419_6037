@@ -32,6 +32,11 @@ class TubeTest {
                 "Bad normal to tube when the normal is orthogonal to the head of the axisRay");
 
     }
+    
+    @Test
+    void testfindIntersections() {
+
+    }
 
 
 

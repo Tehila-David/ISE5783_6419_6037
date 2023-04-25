@@ -2,7 +2,10 @@
 package geometries;
 
 import primitives.Point;
+import primitives.Ray;
 import primitives.Vector;
+
+import java.util.List;
 
 /**
  * The Sphere class represents a sphere in 3D space, defined by a center point and a radius.
@@ -47,5 +50,10 @@ public class Sphere extends RadialGeometry {
     public String toString() {
         return super.toString() +
                 " center=" + center;
+    }
+
+    public List<Point> findIntsersections(Ray ray)
+    {
+        return null;
     }
 }

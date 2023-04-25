@@ -5,6 +5,8 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.List;
+
 /**
  * The Cylinder class represents a cylinder in 3D space, defined by a center point, a radius, an axis ray, and a height.
  * It extends the Tube class.
@@ -51,5 +53,11 @@ public class Cylinder extends Tube {
     public Vector getNormal(Point point) {
         return super.getNormal(point);
     }
+
+    public List<Point> findIntsersections(Ray ray)
+    {
+        return null;
+    }
+
 
 }

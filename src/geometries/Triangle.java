@@ -1,7 +1,10 @@
 package geometries;
 
 import primitives.Point;
+import primitives.Ray;
 import primitives.Vector;
+
+import java.util.List;
 
 /**
  * The Triangle class represents a triangle in 3D space. It extends the Polygon class and is defined by three vertices.
@@ -29,6 +32,11 @@ public class Triangle extends Polygon {
         return super.toString() +
                 "vertices=" + vertices +
                 ", plane=" + plane;
+    }
+
+    public List<Point> findIntsersections(Ray ray)
+    {
+        return null;
     }
 
 

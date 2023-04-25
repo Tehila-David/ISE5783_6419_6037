@@ -46,4 +46,9 @@ class PlaneTest {
         assertThrows(IllegalArgumentException.class,()-> new Plane(p1,p4,p5),"ERROR: points are on the same line ");
 
     }
+
+    @Test
+    void testfindIntersections() {
+
+    }
 }
