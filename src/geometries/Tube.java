@@ -49,7 +49,8 @@ public class Tube extends RadialGeometry {
 
         //Projection of a point on the point
         Point projectionPoint = axisRay.getP0();
-        if (t != 0) {
+        if (t != 0)
+        {
             projectionPoint = axisRay.getPoint(t);
         }
 
