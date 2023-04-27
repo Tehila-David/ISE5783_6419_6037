@@ -48,7 +48,10 @@ class PlaneTest {
     }
 
     @Test
-    void testfindIntersections() {
+    void testfindIntersections()
+    {
+        // ============ Equivalence Partitions Tests ==============
+        //TC01: 
 
     }
 }
