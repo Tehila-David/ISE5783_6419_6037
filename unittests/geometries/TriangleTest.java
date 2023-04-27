@@ -2,7 +2,9 @@ package geometries;
 
 import org.junit.jupiter.api.Test;
 import primitives.Point;
+import primitives.Ray;
 import primitives.Vector;
+import java.util.List;
 
 import java.util.concurrent.TransferQueue;
 
@@ -33,7 +35,18 @@ class TriangleTest {
     }
 
     @Test
-    void testfindIntersections() {
+    void testfindIntersections()
+    {
+        Triangle triangle = new Triangle(new Point(1,0,0),new Point(0,1,0),new Point(1,2,1));
+        // ============ Equivalence Partitions Tests ==============
+        // TC01: The point of intersection with the "contained" plane is inside the triangle.
+        Ray ray = new Ray( new Vector(0, 0, 1),new Point(0.25, 0.25, -1));
+        Point point = new Point(0.25, 0.25, -1);
+        List<Point> result = triangle.findIntsersections(ray);
+        assertEquals(1,result.size(),"Wrong number of points");
+        assertEquals(point,result.get(0),"Wrong number of points");
+        //TC02:The point of intersection with the "contained" plane is outside the triangle - facing one edge
+
 
     }
 
