@@ -10,10 +10,10 @@ public class Ray {
     /**
      * Constructs a new Ray object with the specified direction vector and starting point.
      *
+     * @param point  The starting point of the ray.
      * @param vector The direction vector of the ray.
-     * @param point The starting point of the ray.
      */
-    public Ray(Vector vector, Point point) {
+    public Ray(Point point, Vector vector) {
         this.p0 = point;
         this.dir = vector.normalize();
     }

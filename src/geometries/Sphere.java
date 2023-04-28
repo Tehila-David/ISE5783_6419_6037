@@ -52,7 +52,7 @@ public class Sphere extends RadialGeometry {
                 " center=" + center;
     }
 
-    public List<Point> findIntsersections(Ray ray)
+    public List<Point> findIntersections(Ray ray)
     {
         return null;
     }

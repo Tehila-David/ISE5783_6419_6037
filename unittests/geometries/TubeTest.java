@@ -18,7 +18,7 @@ class TubeTest {
     @Test
     void testGetNormal()
     {
-        Ray ray = new Ray(new Vector(0, 0, 1),new Point(0, 0, 0));
+        Ray ray = new Ray(new Point(0, 0, 0), new Vector(0, 0, 1));
         Tube tube = new Tube(2, ray);
 
         // ============ Equivalence Partitions Tests ==============
