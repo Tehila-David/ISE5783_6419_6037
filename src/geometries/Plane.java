@@ -5,11 +5,13 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.List;
+import static primitives.Util.*;
+
 
 /**
  * Represents a plane in 3D space by a point and a normal vector.
  */
-public class Plane{
+public class Plane implements Geometry {
 
     final private Point q0;
     final private Vector normal;
@@ -48,18 +50,60 @@ public class Plane{
         return q0;
     }
 
+    @Override
     /**
      * Returns the normal vector to the plane.
      *
      * @return the normal vector to the plane
      */
-    public Vector getNormal() {
+    public Vector getNormal(Point point) {
         return normal;
     }
-
+    public Vector getNormal()
+    {
+        return normal;
+    }
+    @Override
     public List<Point> findIntersections(Ray ray)
     {
-        return null;
+        //t=n*(q0-Po)/n*v
+        Vector v= ray.getDir();
+        Point p0=ray.getP0();
+
+        //Ray on the plane
+        if(q0.equals(p0)){
+            return null;
+        }
+
+        //n*(q0-p0)
+       double nqp=normal.dotProduct(q0.subtract(p0));
+              //Ray on the plane
+              if(isZero(nqp)){
+                  return null;
+               }
+       //n*v
+        double nv= normal.dotProduct(v);
+
+        if(isZero(nv))
+        {
+            return null;
+        }
+        double t = alignZero(nqp / nv);
+
+
+
+        //Ray after the plane
+        if(t<0)
+        {
+            return null;
+        }
+        Point P=ray.getPoint(t);
+
+
+        //Ray crosses the plane
+        return List.of(P);
+
     }
+
 
 }

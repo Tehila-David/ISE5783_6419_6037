@@ -27,7 +27,7 @@ class PlaneTest {
         Plane plane = new Plane(p1,p2,p3);
         Vector normal=new Vector(1.0,0.0,-0.0);
         //TC01:Test if the method returns the normal
-        assertEquals(normal, plane.getNormal(), "ERROR: GetNormal() wrong value");
+        assertEquals(normal, plane.getNormal(p1), "ERROR: GetNormal() wrong value");
         //TC02:Test if the normal vector is equal to 1
         assertEquals(1,plane.getNormal().length(),"ERROR: length() wrong value");
     }
@@ -81,10 +81,10 @@ class PlaneTest {
         //**** Group: Ray is orthogonal to the plane
         //TC13: Ray starts before the plane (1 point)
         result=plane.findIntersections(new Ray(new Point(-1,-1,-1),new Vector(1,1,1)));
-        double n = 0.33;    //(1/3)
+        double n = 0.3333333333333335;    //(1/3)
 
         assertEquals(1,result.size(),"Ray starts before the plane-Wrong number of points");
-        assertEquals(new Point(n,n,n), result.get(0)," Ray starts before the plane-wrong point");
+        assertEquals(new Point(n,n,n),result.get(0)," Ray starts before the plane-wrong point");
 
         //TC14: Ray starts inside the plane
         assertNull(plane.findIntersections(new Ray(new Point(0,0,1), new Vector(1,1,1))),"Ray starts inside the plane. Ray is orthogonal to the plane");

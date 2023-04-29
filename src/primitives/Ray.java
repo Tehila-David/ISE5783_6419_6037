@@ -39,11 +39,12 @@ public class Ray {
     /**
      * returns the point on the ray that is in a given distance from the head of the ray
      * @param t the distance from the head of the ray to point
-     * @return the point that is in the given distance from the head of the ray
+     * @return the point that is in the given distance from the head of the ray = p0 + t*v.
      */
     public Point getPoint(double t){
         try
         {
+            Vector v= dir.scale(t);
             return p0.add(dir.scale(t));
         }
         catch(Exception e){
