@@ -3,8 +3,9 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-
+import static primitives.Util.*;
 import java.util.List;
+import java.util.LinkedList;
 
 /**
  * The Triangle class represents a triangle in 3D space. It extends the Polygon class and is defined by three vertices.
@@ -60,8 +61,8 @@ public class Triangle extends Polygon {
             if( !(d1 > 0 && d2 > 0 && d3 > 0) && !( d1 < 0 && d2 < 0 && d3 < 0))
                 return null;
 
-            List<GeoPoint> geoPointsTriangle = new LinkedList<>();
-            geoPointsTriangle.add(new GeoPoint(this, intersectionsOnPlane.get(0).point));
+            List<Point> geoPointsTriangle = new LinkedList<>();
+            geoPointsTriangle.add(intersectionsPlane.get(0));
             return geoPointsTriangle;
         }
         catch (Exception x)
@@ -73,5 +74,5 @@ public class Triangle extends Polygon {
     }
 
 
-}
+
 

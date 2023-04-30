@@ -38,7 +38,7 @@ class TriangleTest {
         // ============ Equivalence Partitions Tests ==============
         // TC01:Ray intersects the triangle
         result = triangle.findIntersections(new Ray(new Point(-0.5, -0.5, -1.5), new Vector(1, 1, 2)));
-        Point point = new Point(0.31, 0.31, 0.38);
+        Point point = new Point(0.3750000000000002,0.3750000000000002,0.25000000000000044);
         assertEquals(1, result.size(), "Ray intersects the triangle-Wrong number of points");
         assertEquals(point, result.get(0), "Ray intersects the triangle- Wrong point");
 
