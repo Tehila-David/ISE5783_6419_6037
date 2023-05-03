@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/geometries/GeometriesTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/PolygonTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PolygonTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/TubeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/TubeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +253,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1682799248182</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary=" findIntersections() for Geometries + tests">
+      <created>1682880847407</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1682880847407</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,7 +287,8 @@
     <MESSAGE value="add /////" />
     <MESSAGE value="tests findIntersections() for Plane,Sphere,Triangle" />
     <MESSAGE value=" findIntersections() for Plane,Sphere" />
-    <option name="LAST_COMMIT_MESSAGE" value=" findIntersections() for Plane,Sphere" />
+    <MESSAGE value=" findIntersections() for Geometries + tests" />
+    <option name="LAST_COMMIT_MESSAGE" value=" findIntersections() for Geometries + tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
