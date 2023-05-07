@@ -29,7 +29,7 @@ public class Camera {
      * @throws IllegalArgumentException throws an exception if
      *         the reference vectors (vUp, vTo) are not orthogonal
      */
-    public Camera(Point p0, Vector vUp, Vector vTo) {
+    public Camera(Point p0, Vector vTo , Vector vUp) {
         if (!isZero(vUp.dotProduct(vTo)))
             throw new IllegalArgumentException("The vectors vTo and vUp are not orthogonal");
         this.p0 = p0;
