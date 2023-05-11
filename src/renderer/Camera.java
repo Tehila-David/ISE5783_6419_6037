@@ -1,7 +1,11 @@
 package renderer;
+import primitives.Color;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+
+import java.util.MissingResourceException;
+
 import static primitives.Util.isZero;
 import static primitives.Util.alignZero;
 
@@ -24,6 +28,9 @@ public class Camera {
     private double width;
     /*distance between the camera and the view plane*/
     private double distance;
+
+    private ImageWriter imageWriter;
+    private RayTracerBase rayTracer;
 
     /*constructor:
      * @throws IllegalArgumentException throws an exception if
@@ -65,6 +72,7 @@ public class Camera {
     public double getDistance() {
         return distance;
     }
+
 
     /*set method for the size of the Plane View.
      *@param width the width of the VP
@@ -115,5 +123,77 @@ public class Camera {
 
         return new Ray(p0, PointIJ.subtract(p0));       //The ray through the wanted pixel
     }
+
+    /*set method for ImageWriter
+    */
+    public Camera setImageWriter(ImageWriter imageWriter) {
+        this.imageWriter = imageWriter;
+        return this;
+    }
+    /*set method for RayTracer
+     */
+    public Camera setRayTracer(RayTracerBase rayTracer) {
+        this.rayTracer = rayTracer;
+        return this;
+    }
+
+    private Color castRay()
+    {
+        //constructRay - ליצור קרן
+       // return rayTracer.traceRay(ray);
+        return null;
+    }
+
+    public void renderImage()
+    {
+        if(height==0||width==0||distance==0|| imageWriter==null||rayTracer==null)
+            throw new MissingResourceException("Camera is missing some fields", "Camera", "field");
+
+        for (int i = 0; i < imageWriter.getNx(); i++){
+            for (int j = 0; j < imageWriter.getNy(); j++){
+                imageWriter.writePixel(j, i, // for each pixel (j,i)
+                        rayTracer.traceRay(constructRay(imageWriter.getNx(), imageWriter.getNy(), j, i)));// find the color of the pixel and construction of a ray through the pixel
+                // and intersecting with the geometries
+            }
+        }
+
+//        for (int i = 0; i < imageWriter.getNx(); i++){
+//            for (int j = 0; j < imageWriter.getNy(); j++){
+//                imageWriter.writePixel(j, i,castRay(ray);
+//
+//            }
+//        }
+
+        //UnsupportedOperationException
+    }
+
+    /**
+     *  print a grid on the image without running over the original image
+     * @param interval the size of the grid squares
+     * @param color the color of the grid
+     * @throws MissingResourceException
+     */
+
+    public void printGrid(int interval, Color color)
+    {
+        if (this.imageWriter == null) // the image writer is uninitialized
+            throw new MissingResourceException("Camera is missing some fields", "Camera", "imageWriter");
+        for (int i = 0; i< imageWriter.getNy(); i++)
+            for(int j = 0; j< imageWriter.getNx(); j++)
+                if(i % interval == 0 || j % interval == 0)  // color the grid
+                    imageWriter.writePixel(j,i,color);
+    }
+
+    /**
+     * create the image file using the image writer
+     */
+    public void writeToImage() {
+        if (this.imageWriter == null) // the image writer is uninitialized
+            throw new MissingResourceException("Camera is missing some fields", "Camera", "imageWriter");
+        imageWriter.writeToImage();
+    }
+
+
+
 
 }
