@@ -29,7 +29,7 @@ public class RayTest {
         // =============== Boundary Values Tests ==================
         //TC11: Test for an empty list
         //listPoints = null;
-       //assertNull(ray.findClosestPoint(listPoints), "list of points is empty - didn't return null");
+        //assertNull(ray.findClosestPoint(listPoints), "list of points is empty - didn't return null");
 
         //TC12: Test that the first point is closest to the beginning of the horn
         listPoints = new LinkedList<>();
