@@ -1,12 +1,34 @@
 package geometries;
 
+import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
 
 /**
  * Interface for geometric shapes that can be intersected and have a surface normal at each point.
  */
-public interface Geometry extends Intersectable{
+public abstract class Geometry extends Intersectable{
+
+    protected Color emission=Color.BLACK;
+
+    /**
+     * @return the emission color of the geometry
+     */
+    public Color getEmission() {
+        return emission;
+    }
+
+
+    /**
+     * setter for the emission color. builder pattern
+     * @param emission to set to the geometry.
+     * @return the geometry itself
+     */
+    public Geometry setEmission(Color emission)
+    {
+        this.emission = emission;
+        return this;
+    }
 
     /**
      * Returns the surface normal to the geometry at a given point.
@@ -14,5 +36,5 @@ public interface Geometry extends Intersectable{
      * @param point the point on the geometry
      * @return the surface normal to the geometry at the given point
      */
-    public Vector getNormal(Point point);
+    public abstract Vector getNormal(Point point);
 }

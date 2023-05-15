@@ -11,7 +11,7 @@ import static primitives.Util.*;
 /**
  * Represents a plane in 3D space by a point and a normal vector.
  */
-public class Plane implements Geometry {
+public class Plane extends Geometry {
 
     final private Point q0;
     final private Vector normal;

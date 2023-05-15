@@ -5,7 +5,7 @@ package geometries;
  * A radial geometry is a shape defined by a radius value.
  * It implements the Geometry interface.
  */
-public abstract class RadialGeometry implements Geometry {
+public abstract class RadialGeometry extends Geometry {
 
     /**
      * The radius of the radial geometry.
