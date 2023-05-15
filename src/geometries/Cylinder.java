@@ -51,7 +51,14 @@ public class Cylinder extends Tube {
      * @return null, since a cylinder has no unique normal vector at any point
      */
     public Vector getNormal(Point point) {
+        if (isOnEdge(point)) {
+            return axisRay.getDir();
+        }
         return super.getNormal(point);
+    }
+
+    private Boolean isOnEdge(Point point) {
+        return false;
     }
 
     public List<Point> findIntersections(Ray ray)

@@ -6,6 +6,8 @@ import primitives.Vector;
 
 import java.util.List;
 
+import static primitives.Util.isZero;
+
 /**
  * The Tube class represents a tube in 3D space, defined by a center point, a radius, and an axis ray.
  * It extends the RadialGeometry class.
@@ -51,7 +53,7 @@ public class Tube extends RadialGeometry {
 
         //Projection of a point on the point
         Point projectionPoint = axisRay.getP0();
-        if (t != 0)
+        if (!isZero(t))
         {
             projectionPoint = axisRay.getPoint(t);
         }

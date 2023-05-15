@@ -137,34 +137,25 @@ public class Camera {
         return this;
     }
 
-    private Color castRay()
-    {
-        //constructRay - ליצור קרן
-       // return rayTracer.traceRay(ray);
-        return null;
-    }
-
     public void renderImage()
     {
         if(height==0||width==0||distance==0|| imageWriter==null||rayTracer==null)
             throw new MissingResourceException("Camera is missing some fields", "Camera", "field");
 
-        for (int i = 0; i < imageWriter.getNx(); i++){
-            for (int j = 0; j < imageWriter.getNy(); j++){
-                imageWriter.writePixel(j, i, // for each pixel (j,i)
-                        rayTracer.traceRay(constructRay(imageWriter.getNx(), imageWriter.getNy(), j, i)));// find the color of the pixel and construction of a ray through the pixel
+        int Nx = imageWriter.getNx();
+        for (int i = 0; i < Nx; i++){
+            int Ny = imageWriter.getNy();
+            for (int j = 0; j < Ny; j++){
+                Color color = castRay(Nx, Ny, i, j);
+                imageWriter.writePixel(j, i, color); // find the color of the pixel and construction of a ray through the pixel
                 // and intersecting with the geometries
             }
         }
+    }
 
-//        for (int i = 0; i < imageWriter.getNx(); i++){
-//            for (int j = 0; j < imageWriter.getNy(); j++){
-//                imageWriter.writePixel(j, i,castRay(ray);
-//
-//            }
-//        }
-
-        //UnsupportedOperationException
+    private Color castRay(int nX, int nY, int i, int j) {
+        Ray ray = constructRay(nX, nY, j, i);
+        return rayTracer.traceRay(ray);
     }
 
     /**
@@ -178,10 +169,13 @@ public class Camera {
     {
         if (this.imageWriter == null) // the image writer is uninitialized
             throw new MissingResourceException("Camera is missing some fields", "Camera", "imageWriter");
-        for (int i = 0; i< imageWriter.getNy(); i++)
+        for (int i = 0; i< imageWriter.getNy(); i+=interval)
             for(int j = 0; j< imageWriter.getNx(); j++)
-                if(i % interval == 0 || j % interval == 0)  // color the grid
-                    imageWriter.writePixel(j,i,color);
+                imageWriter.writePixel(j,i,color); // color the grid
+
+        for (int i = 0; i< imageWriter.getNx(); i+=interval)
+            for(int j = 0; j< imageWriter.getNy(); j++)
+                imageWriter.writePixel(i, j, color); // color the grid
     }
 
     /**

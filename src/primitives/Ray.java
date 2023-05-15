@@ -1,6 +1,7 @@
 package primitives;
 
 import java.util.List;
+
 /**
  * Represents a ray in 3D space.
  */
@@ -39,18 +40,12 @@ public class Ray {
 
     /**
      * returns the point on the ray that is in a given distance from the head of the ray
+     *
      * @param t the distance from the head of the ray to point
      * @return the point that is in the given distance from the head of the ray = p0 + t*v.
      */
-    public Point getPoint(double t){
-        try
-        {
-            Vector v= dir.scale(t);
-            return p0.add(dir.scale(t));
-        }
-        catch(Exception e){
-            return p0;
-        }
+    public Point getPoint(double t) {
+        return p0.add(dir.scale(t));
     }
 
     @Override
@@ -72,12 +67,12 @@ public class Ray {
 
     /**
      * find the point that is closest to the head of the ray.
+     *
      * @param points list of points.
      * @return the closest point to the head of the ray out of the points list.
      */
-    public Point findClosestPoint(List<Point> points)
-    {
-        if (points.isEmpty()) // no close point is available
+    public Point findClosestPoint(List<Point> points) {
+        if (points == null) // no close point is available
             return null;
 
         Point closePoint = points.get(0);   // save the first point
@@ -85,7 +80,7 @@ public class Ray {
 
         for (Point point : points) {
             double distanceOfPoint = point.distanceSquared(this.p0);
-            if(distance > distanceOfPoint)   // if there is a closer point then 'point', replace the values
+            if (distance > distanceOfPoint)   // if there is a closer point then 'point', replace the values
             {
                 closePoint = point;
                 distance = distanceOfPoint;

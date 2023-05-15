@@ -37,8 +37,8 @@ public class Triangle extends Polygon {
     @Override
     public List<Point> findIntersections(Ray ray)
     {
-        List<Point> intersectionsPlane = this.plane.findIntersections(ray);
-        if(intersectionsPlane == null) //check if the ray
+        List<Point> intersections = this.plane.findIntersections(ray);
+        if(intersections == null) //check if the ray
             return null;
 
         // vectors from the start of the ray to each vertex of the triangle
@@ -61,9 +61,7 @@ public class Triangle extends Polygon {
             if( !(d1 > 0 && d2 > 0 && d3 > 0) && !( d1 < 0 && d2 < 0 && d3 < 0))
                 return null;
 
-            List<Point> geoPointsTriangle = new LinkedList<>();
-            geoPointsTriangle.add(intersectionsPlane.get(0));
-            return geoPointsTriangle;
+            return intersections;
         }
         catch (Exception x)
         {
