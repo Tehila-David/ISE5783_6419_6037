@@ -25,12 +25,12 @@ public class Geometries extends Intersectable
         Collections.addAll(this.geometries, geometries);
     }
     @Override
-    public List<Point> findIntersections(Ray ray)
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
     {
-        List<Point> result = null;
+        List<GeoPoint> result = null;
 
         for (Intersectable geo : geometries) {
-            List<Point> points = geo.findIntersections(ray);
+            List<GeoPoint> points = geo.findGeoIntersectionsHelper(ray);
             if (points != null) {
                 if (result == null) {
                     result = new LinkedList<>();
@@ -40,6 +40,15 @@ public class Geometries extends Intersectable
         }
         return result;
 
+
+//        for (Geometry geometry : scene.geometries)
+//        {
+//            var geoIntersections = geometry.findGeoIntersections(ray);
+//        }
     }
+
+
+
+
 
 }

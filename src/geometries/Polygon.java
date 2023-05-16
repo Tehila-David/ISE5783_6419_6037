@@ -82,7 +82,7 @@ public class Polygon extends Geometry {
    public Vector getNormal(Point point) { return plane.getNormal(point); }
 
    @Override
-   public List<Point> findIntersections(Ray ray)
+   public List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
    {
       return null;
    }

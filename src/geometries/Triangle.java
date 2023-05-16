@@ -24,9 +24,9 @@ public class Triangle extends Polygon {
     }
 
 
-  //  public Vector getNormal(Point point) {
+    //  public Vector getNormal(Point point) {
     //    return null;
-  //  }
+    //  }
 
     @Override
     public String toString() {
@@ -34,11 +34,11 @@ public class Triangle extends Polygon {
                 "vertices=" + vertices +
                 ", plane=" + plane;
     }
+
     @Override
-    public List<Point> findIntersections(Ray ray)
-    {
+    public  List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         List<Point> intersections = this.plane.findIntersections(ray);
-        if(intersections == null) //check if the ray
+        if (intersections == null) //check if the ray
             return null;
 
         // vectors from the start of the ray to each vertex of the triangle
@@ -58,18 +58,19 @@ public class Triangle extends Polygon {
             double d3 = alignZero(ray.getDir().dotProduct(n3));
 
             // if the d's have different sign, there is no intersection
-            if( !(d1 > 0 && d2 > 0 && d3 > 0) && !( d1 < 0 && d2 < 0 && d3 < 0))
+            if (!(d1 > 0 && d2 > 0 && d3 > 0) && !(d1 < 0 && d2 < 0 && d3 < 0))
                 return null;
 
-            return intersections;
-        }
-        catch (Exception x)
-        {
+            List<GeoPoint> geoPointsTriangle = new LinkedList<>();
+            geoPointsTriangle.add(new GeoPoint(this, intersections.get(0)));
+            return geoPointsTriangle;
+
+        } catch (Exception x) {
             // one of the cross products constructed the zero vector -> intersect the vertex or the edge of the triangle
             return null;
         }
     }
-    }
+}
 
 
 
