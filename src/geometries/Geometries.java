@@ -40,11 +40,6 @@ public class Geometries extends Intersectable
         }
         return result;
 
-
-//        for (Geometry geometry : scene.geometries)
-//        {
-//            var geoIntersections = geometry.findGeoIntersections(ray);
-//        }
     }
 
 

@@ -53,27 +53,27 @@ public class RaysConstructionTest
                 .setVPSize(3, 3);
 
         // TC01: Sphere before the camera  and is smaller than the view plane (2 points)
-        Sphere sphere = new Sphere( 1,new Point(0, 0, -2.5));
+        Sphere sphere = new Sphere(new Point(0, 0, -2.5), 1);
         assertEquals(2, countIntersections(camera, sphere, 3, 3),
                 "Sphere before the camera and is smaller than the view plane  - wrong amount of intersections");
 
         // TC02: Sphere before the camera and bigger than the view plane (18 points)
-        sphere = new Sphere( 2.5,new Point(0, 0, -2.5));
+        sphere = new Sphere(new Point(0, 0, -2.5), 2.5);
         assertEquals(18, countIntersections(camera, sphere, 3, 3),
                 "Sphere before the camera and bigger than the view plane  - wrong amount of intersections");
 
         // TC03: Sphere before the camera and smaller than the view plane (10 points)
-        sphere = new Sphere( 2,new Point(0, 0, -2));
+        sphere = new Sphere(new Point(0, 0, -2), 2);
         assertEquals(10, countIntersections(camera, sphere, 3, 3),
                 "Sphere before the camera and smaller than the view plane  - wrong amount of intersections");
 
         // TC04: Sphere encapsulates the view plane (9 points)
-        sphere = new Sphere(4,new Point(0, 0, -0.5));
+        sphere = new Sphere(new Point(0, 0, -0.5), 4);
         assertEquals(9, countIntersections(camera, sphere, 3, 3),
                 "Sphere encapsulates the view plane  - wrong amount of intersections");
 
         // TC05: Sphere after the camera and smaller than the view plane (0 points)
-        sphere = new Sphere( 0.5,new Point(0, 0, 2));
+        sphere = new Sphere(new Point(0, 0, 2), 0.5);
         assertEquals(0, countIntersections(camera, sphere, 3, 3),
                 "Sphere after the camera and smaller than the view plane  - wrong amount of intersections");
     }

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import primitives.*;
 import primitives.Vector;
-import java.util.*;
 
 public class GeometriesTests
 {
@@ -14,7 +13,7 @@ public class GeometriesTests
     {
         Geometries geometries = new Geometries(
                  new Plane(new Point(2,2,1), new Vector(0, 0, 2)),
-                 new Sphere(4,new Point(4,0,0)),
+                 new Sphere(new Point(4,0,0), 4),
                  new Triangle(new Point(0, 2, 0), new Point(0, -2, 0), new Point(6,0,0)));
 
 

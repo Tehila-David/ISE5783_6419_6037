@@ -3,30 +3,23 @@ package lighting;
 import primitives.Color;
 import primitives.Double3;
 
-
-public class AmbientLight
+/**
+* A class that represents the ambient lighting in the scene
+*/
+public class AmbientLight extends Light
 {
-    Color intensity; //fill light intensity
-
     public static final AmbientLight NONE = new AmbientLight(Color.BLACK,Double3.ZERO);
-
-    /*constructor*/
-    public AmbientLight(Color intensity, Double3 Ka)
+/**
+* Constructor of Ambient lighting by color intensity and landing factor
+*@param Ia the  color intensity
+ @param Ka the landing factor
+ */
+    public AmbientLight(Color Ia,Double3 Ka)
     {
-        this.intensity = intensity.scale(Ka);
+        super(Ia.scale(Ka));
     }
-    /*constructor*/
-    public AmbientLight(Color intensity, double Ka)
+    public AmbientLight(Color Ia, double Ka)
     {
-        this.intensity = intensity.scale(Ka);
+        super(Ia.scale(Ka));
     }
-
-    /*A method that returns the value of the ambient lighting intensity
-    */
-    public Color getIntensity()
-    {
-        return intensity;
-    }
-
-
 }

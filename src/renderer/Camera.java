@@ -137,7 +137,7 @@ public class Camera {
         return this;
     }
 
-    public void renderImage()
+    public Camera renderImage()
     {
         if(height==0||width==0||distance==0|| imageWriter==null||rayTracer==null)
             throw new MissingResourceException("Camera is missing some fields", "Camera", "field");
@@ -151,6 +151,7 @@ public class Camera {
                 // and intersecting with the geometries
             }
         }
+        return this;
     }
 
     private Color castRay(int nX, int nY, int i, int j) {

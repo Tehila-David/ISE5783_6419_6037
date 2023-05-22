@@ -38,7 +38,7 @@ public class Triangle extends Polygon {
     @Override
     public  List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         List<Point> intersections = this.plane.findIntersections(ray);
-        if (intersections == null) //check if the ray
+        if (intersections == null) //check if the ray not intersect triangle
             return null;
 
         // vectors from the start of the ray to each vertex of the triangle
