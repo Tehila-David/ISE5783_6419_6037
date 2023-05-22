@@ -11,9 +11,9 @@ import primitives.Vector;
 public class PointLight extends Light implements LightSource
 {
     private Point position;
-    double kC=1;
-    double kL=0;
-    double kQ=0;
+    private double kC=1;
+    private double kL=0;
+    private double kQ=0;
 
     /**
      * Constructor of Point Light by color intensity and position

@@ -1,4 +1,5 @@
 package lighting;
+
 import primitives.Color;
 import primitives.Vector;
 import primitives.Point;
@@ -7,8 +8,7 @@ import primitives.Point;
  * An interface that displays the light source object
  */
 
-public interface LightSource
-{
+public interface LightSource {
 
     /**
      * returns color of light intensity on a specific point
@@ -16,6 +16,7 @@ public interface LightSource
      * @return the light intensity on 'p'
      */
     public Color getIntensity(Point p);
+
     /**
      * returns a vector from the light source to a point
      * @param p the destination point of the vector

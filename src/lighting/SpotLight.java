@@ -4,22 +4,22 @@ import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
 
-public class SpotLight extends PointLight
-{
-
+public class SpotLight extends PointLight {
     private final Vector direction;
 
-    public SpotLight(Color intensity , Point position , Vector direction) {
-        super(intensity,position);
-        this.direction = direction;
+    /*constructor*/
+    public SpotLight(Color intensity, Point position, Vector direction) {
+        super(intensity, position);
+        this.direction = direction.normalize();
     }
 
     public SpotLight setNarrowBeam(int i) {
-        return  this;
+        return this;
     }
 
+    /*getIntensity*/
     @Override
     public Color getIntensity(Point point) {
-        return super.getIntensity(point).scale(Math.max(0,direction.dotProduct(getL(point))));
+        return super.getIntensity(point).scale(Math.max(0, direction.dotProduct(getL(point))));
     }
 }

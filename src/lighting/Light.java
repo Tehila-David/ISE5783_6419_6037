@@ -3,7 +3,7 @@ import primitives.Color;
 /**
  * representation of a light
  */
-public class Light
+abstract class Light
 {
     private Color intensity;
 
