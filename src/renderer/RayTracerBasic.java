@@ -32,16 +32,15 @@ public class RayTracerBasic extends RayTracerBase {
 
         GeoPoint point = ray.findClosestGeoPoint(intersectionPoints);   // find the closest point - the point the ray 'sees' first
         return calcColor(point, ray);
-
     }
 
     /**
      * calculating the color of a specific point, taking into account the lightning,
      * transparency of the point itself and other affects of the surrounding are of the point in space
+     *
      * @param geoPoint calculate the color of this point
      * @return for now - the ambient light's intensity
      */
-
     private Color calcColor(GeoPoint geoPoint, Ray ray) {
         return scene.ambientLight.getIntensity()
                 .add(calcLocalEffects(geoPoint, ray));
@@ -49,12 +48,10 @@ public class RayTracerBasic extends RayTracerBase {
 
     /**
      * calculate the effects of the lighting on the intensity of the point
-     *
      * @param geoPoint a GeoPoint object to calculate the effects on
-     * @param ray      the ray of the camera pointing to the GeoPoint's geometry
+     * @param ray the ray of the camera pointing to the GeoPoint's geometry
      * @return the calculated color on the point in the geoPoint
      */
-
     private Color calcLocalEffects(GeoPoint geoPoint, Ray ray) {
         Color color = geoPoint.geometry.getEmission();
         Vector vector = ray.getDir();        // the vector from the camera to the geometry
@@ -65,7 +62,7 @@ public class RayTracerBasic extends RayTracerBase {
 
         Material material = geoPoint.geometry.getMaterial();
         for (LightSource lightSource : scene.lights) {
-            Vector l = lightSource.getL(geoPoint.point); //  // vec from the lightSource to the geometry
+            Vector l = lightSource.getL(geoPoint.point); // vec from the lightSource to the geometry
             double nl = alignZero(normal.dotProduct(l));
             if (nl * nv > 0) { // sign(nl) == sing(nv)
                 Color iL = lightSource.getIntensity(geoPoint.point);
@@ -76,17 +73,32 @@ public class RayTracerBasic extends RayTracerBase {
         return color;
     }
 
-
+    /**
+     * the diffusion effect on the object according to the phong reflection model
+     *
+     * @param material diffusion factor
+     * @param nl vector n dot product vector l
+     * @return calculated intensity with the diffusive effect
+     */
     private Double3 calcDiffusive(Material material, double nl) {
-        if(nl<0)
+        if (nl < 0)
             return material.kD.scale(-nl);
         return material.kD.scale(nl);
     }
 
-
+    /**
+     * the specular effect on the object according to the phong reflection model
+     *
+     * @param material specular factor
+     * @param normal   normal vec to the point on the geometry
+     * @param l vec from the light source to a point on the geometry
+     * @param vector vec from the camera to the geometry = the camera's eye
+     * @param nl vector n dot product vector l
+     * @return calculated intensity with the specular effect
+     */
     private Double3 calcSpecular(Material material, Vector normal, Vector l, double nl, Vector vector) {
         Vector r = l.subtract(normal.scale(2 * nl));    // the specular ray
-        return material.kS.scale(Math.pow(Math.max(0,vector.scale(-1).dotProduct(r)),material.nShininess));
+        return material.kS.scale(Math.pow(Math.max(0, vector.scale(-1).dotProduct(r)), material.nShininess));
     }
 
 

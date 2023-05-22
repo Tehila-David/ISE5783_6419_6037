@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +260,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1682880847407</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎-00014" summary="final Stage6 - part2 (remaining 10 and 11)">
+      <created>1684783240004</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1684783240004</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,7 +295,8 @@
     <MESSAGE value="tests findIntersections() for Plane,Sphere,Triangle" />
     <MESSAGE value=" findIntersections() for Plane,Sphere" />
     <MESSAGE value=" findIntersections() for Geometries + tests" />
-    <option name="LAST_COMMIT_MESSAGE" value=" findIntersections() for Geometries + tests" />
+    <MESSAGE value="final Stage6 - part2 (remaining 10 and 11)" />
+    <option name="LAST_COMMIT_MESSAGE" value="final Stage6 - part2 (remaining 10 and 11)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
