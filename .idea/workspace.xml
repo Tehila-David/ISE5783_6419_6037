@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +268,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1684783240004</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎-00015" summary="final Stage6 - add javadoc in RayTracerBasic">
+      <created>1684785341406</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1684785341406</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +304,8 @@
     <MESSAGE value=" findIntersections() for Plane,Sphere" />
     <MESSAGE value=" findIntersections() for Geometries + tests" />
     <MESSAGE value="final Stage6 - part2 (remaining 10 and 11)" />
-    <option name="LAST_COMMIT_MESSAGE" value="final Stage6 - part2 (remaining 10 and 11)" />
+    <MESSAGE value="final Stage6 - add javadoc in RayTracerBasic" />
+    <option name="LAST_COMMIT_MESSAGE" value="final Stage6 - add javadoc in RayTracerBasic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
