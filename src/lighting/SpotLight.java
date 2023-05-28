@@ -6,15 +6,15 @@ import primitives.Vector;
 
 public class SpotLight extends PointLight {
     private final Vector direction;
-    private double specularN = 1;
+    private int specularN = 1;
 
     /*constructor*/
     public SpotLight(Color intensity, Point position, Vector direction) {
         super(intensity, position);
         this.direction = direction.normalize();
     }
-
-    public SpotLight setNarrowBeam(double specularN) {
+   
+    public SpotLight setNarrowBeam(int specularN) {
         this.specularN = specularN;
         return this;
     }
@@ -22,6 +22,8 @@ public class SpotLight extends PointLight {
     /*getIntensity*/
     @Override
     public Color getIntensity(Point point) {
-        return super.getIntensity(point).scale(Math.max(0, direction.dotProduct(getL(point))));
+        if(specularN==1)
+           return super.getIntensity(point).scale(Math.max(0, this.direction.dotProduct(getL(point))));
+        return super.getIntensity(point).scale(Math.pow(Math.max(0, this.direction.dotProduct(getL(point))),specularN));
     }
 }
