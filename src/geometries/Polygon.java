@@ -82,9 +82,32 @@ public class Polygon extends Geometry {
    public Vector getNormal(Point point) { return plane.getNormal(point); }
 
    @Override
-   public List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
-   {
-      return null;
-   }
+   protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
+      List<GeoPoint> intersections = plane.findGeoIntersections(ray, maxDistance);
+      if (intersections == null)
+         return null;
+      Point intersectionPoint = intersections.get(0).point;
+      try {
+         Vector edgeVector = this.vertices.get(0).subtract(this.vertices.get(this.size - 1)).normalize();
+         Vector vecToPoint = intersectionPoint.subtract(this.vertices.get(size - 1)).normalize();
+         Vector normalVector = edgeVector.crossProduct(vecToPoint).normalize();	// the first vector to compare to the others
 
+         for (int i = 0; i < this.size - 1; i++) {
+            edgeVector = this.vertices.get(i + 1).subtract(this.vertices.get(i)).normalize();
+            vecToPoint = intersectionPoint.subtract(this.vertices.get(i)).normalize();
+            Vector crossVector = edgeVector.crossProduct(vecToPoint).normalize();
+
+            if (!normalVector.equals(crossVector))	// at least 1 vec is not the same, then the point is outside the polygon
+               return null;
+         }
+         intersections.clear(); // the point is inside the polygon
+         intersections.add(new GeoPoint(this, intersectionPoint));
+         return intersections;
+      }
+      catch (IllegalArgumentException e){
+         // an exception was thrown because the zero vector was constructed because
+         // the point of intersection was on a vertex or on an edge
+         return null;
+      }
+   }
 }

@@ -22,23 +22,16 @@ public class Triangle extends Polygon {
     public Triangle(Point p1, Point p2, Point p3) {
         super(p1, p2, p3);
     }
-
-
-    //  public Vector getNormal(Point point) {
-    //    return null;
-    //  }
-
     @Override
     public String toString() {
         return super.toString() +
                 "vertices=" + vertices +
                 ", plane=" + plane;
     }
-
     @Override
-    public  List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
-        List<Point> intersections = this.plane.findIntersections(ray);
-        if (intersections == null) //check if the ray not intersect triangle
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
+        List<GeoPoint> intersectionsOnPlane = this.plane.findGeoIntersections(ray, maxDistance);
+        if (intersectionsOnPlane == null) //the ray doesn't intersect the plane
             return null;
 
         // vectors from the start of the ray to each vertex of the triangle
@@ -62,14 +55,18 @@ public class Triangle extends Polygon {
                 return null;
 
             List<GeoPoint> geoPointsTriangle = new LinkedList<>();
-            geoPointsTriangle.add(new GeoPoint(this, intersections.get(0)));
+            geoPointsTriangle.add(new GeoPoint(this, intersectionsOnPlane.get(0).point));
             return geoPointsTriangle;
-
         } catch (Exception x) {
             // one of the cross products constructed the zero vector -> intersect the vertex or the edge of the triangle
             return null;
         }
     }
+
+
+
+
+
 }
 
 

@@ -18,12 +18,24 @@ import geometries.Intersectable.GeoPoint;
 
 
 public class RayTracerBasic extends RayTracerBase {
+    /**
+     * A fixed number for the size of the ray head shift for shading rays
+     */
+    private static final double DELTA = 0.1;
 
-    /*constructor*/
+    /**
+     * constructor of RayTracerBasic
+     * @param scene
+     */
     public RayTracerBasic(Scene scene) {
         super(scene);
     }
 
+    /**
+     *
+     * @param ray the ray to trace the scene with
+     * @return color
+     */
     @Override
     public Color traceRay(Ray ray) {
         List<GeoPoint> intersectionPoints = scene.geometries.findGeoIntersections(ray); // intersect the ray with the geometries
@@ -44,6 +56,7 @@ public class RayTracerBasic extends RayTracerBase {
     private Color calcColor(GeoPoint geoPoint, Ray ray) {
         return scene.ambientLight.getIntensity()
                 .add(calcLocalEffects(geoPoint, ray));
+
     }
 
     /**
@@ -64,12 +77,15 @@ public class RayTracerBasic extends RayTracerBase {
         for (LightSource lightSource : scene.lights) {
             Vector l = lightSource.getL(geoPoint.point); // vec from the lightSource to the geometry
             double nl = alignZero(normal.dotProduct(l));
-            if (nl * nv > 0) { // sign(nl) == sing(nv)
-                Color iL = lightSource.getIntensity(geoPoint.point);
-                color = color.add(iL.scale(calcDiffusive(material, nl)),
-                        iL.scale(calcSpecular(material, normal, l, nl, vector)));
+            if (nl * nv > 0  // sign(nl) == sing(nv) ->
+                    // the camera and the light source are on the same side of the surface
+                    && unshaded(geoPoint, normal, lightSource))
+            {
+                Color lightIntensity = lightSource.getIntensity(geoPoint.point);
+                color = color.add(lightIntensity.scale(calcDiffusive(material, nl)),
+                        lightIntensity.scale(calcSpecular(material, normal, l, nl, vector)));
+                }
             }
-        }
         return color;
     }
 
@@ -88,7 +104,6 @@ public class RayTracerBasic extends RayTracerBase {
 
     /**
      * the specular effect on the object according to the phong reflection model
-     *
      * @param material specular factor
      * @param normal   normal vec to the point on the geometry
      * @param l vec from the light source to a point on the geometry
@@ -101,5 +116,18 @@ public class RayTracerBasic extends RayTracerBase {
         return material.kS.scale(Math.pow(Math.max(0, vector.scale(-1).dotProduct(r)), material.nShininess));
     }
 
+    /**
+     * A method of checking non-shading between a point and the light source
+     * @param geopoint
+     * @param n
+     * @param lightSource
+     * @return true if unshaded
+     */
+    private boolean unshaded(GeoPoint geopoint, Vector n, LightSource lightSource) {
+        Vector lightDirection = lightSource.getL(geopoint.point).scale(-1); // from point to light source
+        Ray lightRay = new Ray(geopoint.point.add(n.scale(n.dotProduct(lightDirection) > 0 ? DELTA : -DELTA)), lightDirection);
+        List<GeoPoint> intersections = scene.geometries.findGeoIntersections(lightRay,lightSource.getDistance(geopoint.point));
+        return intersections == null;
+    }
 
 }

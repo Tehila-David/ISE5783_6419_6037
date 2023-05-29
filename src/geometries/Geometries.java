@@ -24,23 +24,23 @@ public class Geometries extends Intersectable
     {
         Collections.addAll(this.geometries, geometries);
     }
+
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
-    {
-        List<GeoPoint> result = null;
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
+        List<GeoPoint> Intersections = new LinkedList<>();
 
-        for (Intersectable geo : geometries) {
-            List<GeoPoint> points = geo.findGeoIntersectionsHelper(ray);
-            if (points != null) {
-                if (result == null) {
-                    result = new LinkedList<>();
-                }
-                result.addAll(points);
-            }
+        for (Intersectable intersectable: this.geometries) {
+            List<GeoPoint> currentIntersection = intersectable.findGeoIntersectionsHelper(ray, maxDistance);
+            if(currentIntersection != null) // intersection was found
+                Intersections.addAll(currentIntersection);
         }
-        return result;
 
+        if(Intersections.size() == 0)
+            return null;
+        return Intersections;
     }
+
+
 
 
 

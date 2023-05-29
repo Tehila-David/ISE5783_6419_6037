@@ -4,6 +4,7 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.LinkedList;
 import java.util.List;
 import static primitives.Util.*;
 
@@ -63,40 +64,27 @@ public class Plane extends Geometry {
     {
         return normal;
     }
+
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
-    {
-        //t=n*(q0-Po)/n*v
-        Vector v= ray.getDir();
-        Point p0=ray.getP0();
-
-        //Ray on the plane
-        if(q0.equals(p0)){
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
+        if(this.q0.equals(ray.getP0())) //ray starts at the reference point of the plane
             return null;
-        }
 
-        //n*(q0-p0)
-        double nqp=normal.dotProduct(q0.subtract(p0));
-        //Ray on the plane
-        if(isZero(nqp)){
+        Vector vecFromRayToNormal = this.q0.subtract(ray.getP0());
+        double numerator = this.normal.dotProduct(vecFromRayToNormal);
+        if(isZero(numerator)) // ray starts on the plane
             return null;
-        }
-        //n*v
-        double nv= normal.dotProduct(v);
-        if(isZero(nv)) {
-            return null;
-        }
-        double t = alignZero(nqp / nv);
 
-        //Ray after the plane
-        if(t<0) {
+        double denominator = this.normal.dotProduct(ray.getDir());
+        if(isZero(denominator)) // ray is parallel to the plane
             return null;
-        }
-        Point P=ray.getPoint(t);
 
-        //Ray crosses the plane
-        return List.of(new GeoPoint(this,P));
+        double t = numerator / denominator;
+        if(t < 0 || alignZero(t - maxDistance) > 0) // ray starts after the plane
+            return null;
+
+        List<GeoPoint> intersections = new LinkedList<>();
+        intersections.add(new GeoPoint(this, ray.getPoint(t)));
+        return intersections;
     }
-
-
 }
