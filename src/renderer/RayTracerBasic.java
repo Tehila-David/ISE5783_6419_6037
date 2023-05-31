@@ -22,6 +22,9 @@ public class RayTracerBasic extends RayTracerBase {
      * A fixed number for the size of the ray head shift for shading rays
      */
     private static final double DELTA = 0.1;
+    private static final int MAX_CALC_COLOR_LEVEL = 10;
+    private static final double MIN_CALC_COLOR_K = 0.001;
+
 
     /**
      * constructor of RayTracerBasic
@@ -79,8 +82,7 @@ public class RayTracerBasic extends RayTracerBase {
             double nl = alignZero(normal.dotProduct(l));
             if (nl * nv > 0  // sign(nl) == sing(nv) ->
                     // the camera and the light source are on the same side of the surface
-                    && unshaded(geoPoint, normal, lightSource))
-            {
+                    && unshaded(geoPoint, normal, lightSource)) {
                 Color lightIntensity = lightSource.getIntensity(geoPoint.point);
                 color = color.add(lightIntensity.scale(calcDiffusive(material, nl)),
                         lightIntensity.scale(calcSpecular(material, normal, l, nl, vector)));
@@ -124,10 +126,52 @@ public class RayTracerBasic extends RayTracerBase {
      * @return true if unshaded
      */
     private boolean unshaded(GeoPoint geopoint, Vector n, LightSource lightSource) {
+
         Vector lightDirection = lightSource.getL(geopoint.point).scale(-1); // from point to light source
         Ray lightRay = new Ray(geopoint.point.add(n.scale(n.dotProduct(lightDirection) > 0 ? DELTA : -DELTA)), lightDirection);
         List<GeoPoint> intersections = scene.geometries.findGeoIntersections(lightRay,lightSource.getDistance(geopoint.point));
         return intersections == null;
+    }
+
+    /**
+     * construct the refraction ray according to the physics law of refraction
+     * @param point reference point of the new ray
+     * @param ray the ray to refract
+     * @return the refraction ray
+     */
+    private Ray constructRefractedRay(Point point, Ray ray) {
+        return new Ray(point, ray.getDir());
+    }
+
+    /**
+     * construct the reflection ray according to the physics law of reflection
+     * @param point reference point of the new ray
+     * @param ray the ray to reflect
+     * @param normal the normal to the geometry the point belongs to
+     * @return the reflected ray
+     */
+    private Ray constructReflectedRay(Vector normal ,Point point, Ray ray) {
+        return new Ray(point, reflectionVector(ray.getDir(), normal));
+    }
+
+    /**
+     * calculate the reflected vector using linear algebra and projection on a normal vector
+     * @param l the vector to reflect
+     * @param n the normal vector to reflect by
+     * @return the reflected vector
+     */
+    private Vector reflectionVector(Vector l, Vector n) {
+        return l.subtract(n.scale(2 * l.dotProduct(n))).normalize();
+    }
+
+    /**
+     * intersects the ray with the scene and finds the closest point the ray intersects
+     * @param ray to intersect the scene with
+     * @return the closest point
+     */
+    private GeoPoint findClosestIntersection(Ray ray) {
+        List<GeoPoint> intersectionPoints = scene.geometries.findGeoIntersections(ray);
+        return ray.findClosestGeoPoint(intersectionPoints);
     }
 
 }
