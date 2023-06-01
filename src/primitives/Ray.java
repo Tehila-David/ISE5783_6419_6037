@@ -9,6 +9,7 @@ import geometries.Intersectable.GeoPoint;
 public class Ray {
     final private Point p0;
     final private Vector dir;
+    private static final double DELTA = 0.1;
 
     /**
      * Constructs a new Ray object with the specified direction vector and starting point.
@@ -19,6 +20,17 @@ public class Ray {
     public Ray(Point point, Vector vector) {
         this.p0 = point;
         this.dir = vector.normalize();
+    }
+
+    /**
+     * Constructs a new Ray object
+     * @param head
+     * @param direction
+     * @param normal
+     */
+    public Ray(Point head, Vector direction, Vector normal){
+        this.p0 = head.add(normal.scale(normal.dotProduct(direction) > 0 ? DELTA : -DELTA));
+        this.dir = direction.normalize();
     }
 
     /**
