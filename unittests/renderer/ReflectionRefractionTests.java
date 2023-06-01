@@ -1,5 +1,5 @@
 
-package LightTests;
+package renderer;
 
 import static java.awt.Color.*;
 

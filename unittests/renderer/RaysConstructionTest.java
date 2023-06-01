@@ -1,28 +1,36 @@
 package renderer;
 
+import lighting.AmbientLight;
+import lighting.SpotLight;
 import org.junit.jupiter.api.Test;
+
+import static java.awt.Color.BLUE;
+import static java.awt.Color.WHITE;
 import static org.junit.jupiter.api.Assertions.*;
 
+import primitives.Color;
+import primitives.Material;
 import primitives.Point;
 import primitives.Vector;
 import geometries.Triangle;
 import geometries.Sphere;
 import geometries.Plane;
 import geometries.Intersectable;
+import scene.Scene;
+
 import java.util.List;
 
 
 /*Integration tests between creating rays from a camera
  *and calculating sections of a ray with geometric bodies
  */
-public class RaysConstructionTest
-{
+public class RaysConstructionTest {
     /**
      * Integration tests of a camera and a plane.
      */
     @Test
     void testRayConstructionPlane() {
-        Camera camera = new Camera(new Point(0, 0, 2), new Vector(0,0,-2), new Vector(0, 2, 0))
+        Camera camera = new Camera(new Point(0, 0, 2), new Vector(0, 0, -2), new Vector(0, 2, 0))
                 .setVPDistance(2)
                 .setVPSize(3, 3);
 
@@ -32,12 +40,12 @@ public class RaysConstructionTest
                 "plane is before the camera and parallel to the view plane - wrong number of intersections");
 
         // TC02: plane is before the camera(6 points)
-        plane = new Plane(new Point(3, 3, 0), new Vector(-2,0,2));
+        plane = new Plane(new Point(3, 3, 0), new Vector(-2, 0, 2));
         assertEquals(6, countIntersections(camera, plane, 3, 3),
                 "plane is before the camera - wrong number of intersections");
 
         // TC02: plane is before the camera(9 points)
-        plane = new Plane(new Point(3, 3, 0), new Vector(-2,0,6));
+        plane = new Plane(new Point(3, 3, 0), new Vector(-2, 0, 6));
         assertEquals(9, countIntersections(camera, plane, 3, 3),
                 "plane is before the camera - wrong number of intersections");
     }
@@ -46,9 +54,8 @@ public class RaysConstructionTest
      * Integration tests of a camera and a sphere.
      */
     @Test
-    void testRayConstructionSphere()
-    {
-        Camera camera = new Camera(new Point(0, 0, 0.5), new Vector(0,0,-1), new Vector(0, 1, 0))
+    void testRayConstructionSphere() {
+        Camera camera = new Camera(new Point(0, 0, 0.5), new Vector(0, 0, -1), new Vector(0, 1, 0))
                 .setVPDistance(1)
                 .setVPSize(3, 3);
 
@@ -83,7 +90,7 @@ public class RaysConstructionTest
      */
     @Test
     void testRayConstructionTriangle() {
-        Camera camera = new Camera(new Point(0, 0, 0), new Vector(0,0,-2), new Vector(0, 2, 0))
+        Camera camera = new Camera(new Point(0, 0, 0), new Vector(0, 0, -2), new Vector(0, 2, 0))
                 .setVPDistance(1)
                 .setVPSize(3, 3);
 
@@ -100,24 +107,20 @@ public class RaysConstructionTest
     }
 
 
-
-
-
-
     /**
-     *  Helper method for testing intersectables and a camera.
+     * Helper method for testing intersectables and a camera.
      *
-     * @param camera the object to construct the rays from
+     * @param camera        the object to construct the rays from
      * @param intersectable the object to intersect with the rays
-     * @param nX the width pixels of the view plane
-     * @param nY the height pixels of the view plane
+     * @param nX            the width pixels of the view plane
+     * @param nY            the height pixels of the view plane
      * @return the amount of intersections with a geometry from a camera
      */
-    int countIntersections(Camera camera, Intersectable intersectable, int nX, int nY){
+    int countIntersections(Camera camera, Intersectable intersectable, int nX, int nY) {
         int numberIntersections = 0;
 
-        for (int i = 0 ; i < nX ; i++)      // go over all the pixels in the view plane
-            for(int j = 0; j < nY; j++)     // for each pixel [j,i], construct a ray and
+        for (int i = 0; i < nX; i++)      // go over all the pixels in the view plane
+            for (int j = 0; j < nY; j++)     // for each pixel [j,i], construct a ray and
             {                               // check the intersection points with the geometry
                 List<Point> pointList = intersectable.findIntersections(camera.constructRay(nX, nY, j, i));
                 if (pointList != null)

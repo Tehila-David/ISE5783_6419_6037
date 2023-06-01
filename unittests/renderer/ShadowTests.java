@@ -1,26 +1,29 @@
-package LightTests;
+package renderer;
 
+import geometries.Intersectable;
+import geometries.Sphere;
+import geometries.Triangle;
+import lighting.AmbientLight;
+import lighting.SpotLight;
 import org.junit.jupiter.api.Test;
-
-import static java.awt.Color.*;
-
-import geometries.*;
-import lighting.*;
-import primitives.*;
-import renderer.Camera;
-import renderer.ImageWriter;
-import renderer.RayTracerBasic;
+import primitives.Color;
+import primitives.Material;
+import primitives.Point;
+import primitives.Vector;
 import scene.Scene;
+
+import static java.awt.Color.BLUE;
+import static java.awt.Color.WHITE;
 
 /** Testing basic shadows
  * @author Dan */
-public class ShadowTests {
+public  class ShadowTests {
     private Intersectable sphere     = new Sphere(new Point(0, 0, -200), 60d)                                         //
             .setEmission(new Color(BLUE))                                                                                  //
             .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(30));
     private Material      trMaterial = new Material().setKd(0.5).setKs(0.5).setShininess(30);
 
-    private Scene         scene      = new Scene("Test scene");
+    private Scene scene      = new Scene("Test scene");
     private Camera camera     = new Camera(new Point(0, 0, 1000), new Vector(0, 0, -1), new Vector(0, 1, 0))   //
             .setVPSize(200, 200).setVPDistance(1000)                                                                       //
             .setRayTracer(new RayTracerBasic(scene));
@@ -108,3 +111,4 @@ public class ShadowTests {
     }
 
 }
+
