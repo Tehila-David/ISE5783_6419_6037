@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/unittests/renderer/ShadowTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/LightTests/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/LightTests/ShadowTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/RaysConstructionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RaysConstructionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,6 @@
         <item itemvalue="JUnit.renderer in ISE5783_6419_6037" />
         <item itemvalue="JUnit.ReflectionRefractionTests" />
         <item itemvalue="JUnit.ReflectionRefractionTests1" />
-        <item itemvalue="JUnit.ShadowTests (1)" />
         <item itemvalue="JUnit.ShadowTests" />
       </list>
     </recent_temporary>
@@ -380,11 +378,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Main_java$PlaneTest_testGetNormal.ic" NAME="PlaneTest.testGetNormal Coverage Results" MODIFIED="1681642746341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>geometries.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Main_java$PointTest_testDistanceSquared.ic" NAME="PointTest.testDistanceSquared Coverage Results" MODIFIED="1681415535281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>primitives.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Main_java$PlaneTest_testGetNormal.ic" NAME="PlaneTest.testGetNormal Coverage Results" MODIFIED="1681642746341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>geometries.*</FILTER>
     </SUITE>
   </component>
 </project>

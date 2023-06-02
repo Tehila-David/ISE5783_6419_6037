@@ -25,20 +25,22 @@ public class Material {
 
     /**
      * Update action for Reduction of refraction by Builder template
+     *
      * @param kT Reduction of transparency, Double3
      * @return Material
      */
-    public Material  setkT(Double3 kT) {
+    public Material setkT(Double3 kT) {
         this.kT = kT;
         return this;
     }
 
     /**
      * Update action for Reduction of reflection by Builder template
+     *
      * @param kR Reduction of reflection, Double3
      * @return Material
      */
-    public Material  setkR(Double3 kR) {
+    public Material setkR(Double3 kR) {
         this.kR = kR;
         return this;
     }
@@ -57,25 +59,28 @@ public class Material {
         this.kS = new Double3(kS);
         return this;
     }
+
     /**
      * Update action for Reduction of refraction by Builder template
+     *
      * @param kT Reduction of transparency, double
      * @return Material
      */
-    public Material  setkT(double kT) {
+    public Material setkT(double kT) {
         this.kT = new Double3(kT);
         return this;
     }
+
     /**
      * Update action for Reduction of reflection by Builder template
+     *
      * @param kR Reduction of reflection, double
      * @return Material
      */
-    public Material  setkR(double kR) {
+    public Material setkR(double kR) {
         this.kR = new Double3(kR);
         return this;
     }
-
 
 
 }
