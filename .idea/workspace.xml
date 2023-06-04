@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/unittests/projects/CreatingPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,22 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.renderer in ISE5783_6419_6037">
+  <component name="RunManager" selected="JUnit.CreatingPicture">
+    <configuration name="CreatingPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_6419_6037" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="projects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="projects" />
+      <option name="MAIN_CLASS_NAME" value="projects.CreatingPicture" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReflectionRefractionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_6419_6037" />
       <extension name="coverage">
@@ -130,21 +144,6 @@
       <module name="ISE5783_6419_6037" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unittests.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittests.renderer.ShadowTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_6419_6037" />
-      <extension name="coverage">
-        <pattern>
           <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
@@ -152,6 +151,20 @@
       <option name="PACKAGE_NAME" value="LightTests" />
       <option name="MAIN_CLASS_NAME" value="LightTests.ShadowTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projects in ISE5783_6419_6037" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_6419_6037" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="projects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="projects" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,10 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreatingPicture" />
+        <item itemvalue="JUnit.projects in ISE5783_6419_6037" />
         <item itemvalue="JUnit.renderer in ISE5783_6419_6037" />
         <item itemvalue="JUnit.ReflectionRefractionTests" />
         <item itemvalue="JUnit.ReflectionRefractionTests1" />
-        <item itemvalue="JUnit.ShadowTests" />
       </list>
     </recent_temporary>
   </component>
@@ -335,7 +349,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1685614779587</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎-00022" summary="Stage 7.2 - It remains to add a picture">
+      <created>1685717859638</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1685717859638</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,7 +392,8 @@
     <MESSAGE value="Adding Shadows tests" />
     <MESSAGE value="in the middle of stage 7.2" />
     <MESSAGE value="finish refraction and reflection Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish refraction and reflection Tests" />
+    <MESSAGE value="Stage 7.2 - It remains to add a picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stage 7.2 - It remains to add a picture" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
