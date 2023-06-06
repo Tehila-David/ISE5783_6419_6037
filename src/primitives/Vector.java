@@ -1,5 +1,9 @@
 package primitives;
 
+
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
+
 /**
  * The Vector class represents a mathematical vector in 3D space. It extends the Point class
  * and can be added to or subtracted from other vectors or points. It can also be scaled, dot-multiplied,
@@ -116,5 +120,7 @@ public class Vector extends Point {
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
+
 }
 

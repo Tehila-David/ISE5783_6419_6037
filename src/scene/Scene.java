@@ -1,6 +1,7 @@
 package scene;
 
 import geometries.Geometries;
+import geometries.Intersectable;
 import lighting.AmbientLight;
 import lighting.LightSource;
 import lighting.PointLight;
@@ -51,6 +52,10 @@ public class Scene
     /*set to Geometries*/
     public Scene setGeometries(Geometries geometries) {
         this.geometries = geometries;
+        return this;
+    }
+    public Scene addGeometry(Intersectable geometry){
+        geometries.add(geometry);
         return this;
     }
 }
