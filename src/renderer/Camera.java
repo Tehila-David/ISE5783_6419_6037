@@ -5,6 +5,7 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.MissingResourceException;
+import java.util.stream.IntStream;
 
 import static primitives.Util.isZero;
 import static primitives.Util.alignZero;
@@ -142,15 +143,22 @@ public class Camera {
         if(height==0||width==0||distance==0|| imageWriter==null||rayTracer==null)
             throw new MissingResourceException("Camera is missing some fields", "Camera", "field");
 
-        int Nx = imageWriter.getNx();
-        for (int i = 0; i < Nx; i++){
-            int Ny = imageWriter.getNy();
-            for (int j = 0; j < Ny; j++){
-                Color color = castRay(Nx, Ny, i, j);
-                imageWriter.writePixel(j, i, color); // find the color of the pixel and construction of a ray through the pixel
-                // and intersecting with the geometries
-            }
-        }
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        IntStream.range(0, nX).parallel().forEach(i -> {
+            IntStream.range(0, nY).parallel().forEach(j -> {
+                Color color = castRay(nX, nY, i, j);
+                imageWriter.writePixel(j, i, color);
+            });
+        });
+
+//        for (int i = 0; i < nX; i++){
+//            for (int j = 0; j < nY; j++){
+//                Color color = castRay(nX, nY, i, j);
+//                imageWriter.writePixel(j, i, color); // find the color of the pixel and construction of a ray through the pixel
+//                // and intersecting with the geometries
+//            }
+//        }
         return this;
     }
 

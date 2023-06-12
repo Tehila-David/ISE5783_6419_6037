@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="Adding pictur">
-      <change afterPath="$PROJECT_DIR$/unittests/cameraTests/CameraTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/projects/ImageStage7.java" afterDir="false" />
+    <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +96,14 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DiamondStage7.createImage">
+    <configuration name="All in ISE5783_6419_6037" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_6419_6037" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CreatingPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_6419_6037" />
       <extension name="coverage">
@@ -160,42 +165,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_6419_6037" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="LightTests" />
-      <option name="MAIN_CLASS_NAME" value="LightTests.ShadowTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="renderer in ISE5783_6419_6037" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_6419_6037" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DiamondStage7.createImage" />
+        <item itemvalue="JUnit.All in ISE5783_6419_6037" />
         <item itemvalue="JUnit.DiamondStage7" />
         <item itemvalue="JUnit.ImageStage7" />
         <item itemvalue="JUnit.CreatingPicture" />
-        <item itemvalue="JUnit.renderer in ISE5783_6419_6037" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +331,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1685614779587</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎-00022" summary="The picture not work! the location of camera not good!">
+      <created>1686049148016</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686049148016</updated>
+    </task>
+    <task id="LOCAL‎-00023" summary="The picture not work! the location of camera not good!!">
+      <created>1686049207430</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686049207430</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,7 +381,9 @@
     <MESSAGE value="Adding Shadows tests" />
     <MESSAGE value="in the middle of stage 7.2" />
     <MESSAGE value="finish refraction and reflection Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish refraction and reflection Tests" />
+    <MESSAGE value="The picture not work! the location of camera not good!" />
+    <MESSAGE value="The picture not work! the location of camera not good!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="The picture not work! the location of camera not good!!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
