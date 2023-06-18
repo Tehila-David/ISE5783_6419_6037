@@ -60,56 +60,66 @@ public class DiamondStage7 {
         Point C4C5 = new Point(-38, -22, 350);
         Point C5C6 = new Point(0, -43, 350);
         Point C6C1 = new Point(38, -22, 350);
-        java.awt.Color yellow1 = red;
+        //colors of Diamonds
+        java.awt.Color colorDiamond1 = red ;
+        java.awt.Color colorDiamond2 = pink;
+        //The Diamond
         scene.geometries.add(
                 //triangles on the bottom side
-                new Triangle(A,B1,B1B2).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B2,B1B2).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B1,B1B2).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B2,B1B2).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(A,B2,B2B3).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B3,B2B3).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B2,B2B3).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B3,B2B3).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(A,B3,B3B4).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B4,B3B4).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B3,B3B4).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B4,B3B4).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(A,B4,B4B5).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B5,B4B5).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B4,B4B5).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B5,B4B5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(A,B5,B5B6).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B6,B5B6).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B5,B5B6).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B6,B5B6).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(A,B6,B6B1).setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.4).setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(A,B1,B6B1).setEmission(new Color(yellow1)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(1000)),
+                new Triangle(A,B6,B6B1).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(A,B1,B6B1).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.8).setKs(0.8).setKd(0.2).setShininess(1000)),
 
                 //triangles on the top side
-                new Triangle(B1,C1,B1B2).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(C1,B1B2,C2).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(B1B2,C2,B2).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
+                new Triangle(B1,C1,B1B2).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(C1,B1B2,C2).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(B1B2,C2,B2).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(B2,C2,B2B3).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(C2,B2B3,C3).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(B2B3,C3,B3).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
+                new Triangle(B2,C2,B2B3).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(C2,B2B3,C3).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(B2B3,C3,B3).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(B3,C3,B3B4).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(C3,B3B4,C4).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(B3B4,C4,B4).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
+                new Triangle(B3,C3,B3B4).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(C3,B3B4,C4).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(B3B4,C4,B4).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(B4,C4,B4B5).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(C4,B4B5,C5).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(B4B5,C5,B5).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
+                new Triangle(B4,C4,B4B5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(C4,B4B5,C5).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(B4B5,C5,B5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(B5,C5,B5B6).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(C5,B5B6,C6).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
-                new Triangle(B5B6,C6,B6).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(1000)),
+                new Triangle(B5,C5,B5B6).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(C5,B5B6,C6).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
+                new Triangle(B5B6,C6,B6).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(1000)),
 
-                new Triangle(B6,C6,B6B1).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(100)),
-                new Triangle(C6,B6B1,C1).setEmission(new Color(PINK)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(100)),
-                new Triangle(B6B1,C1,B1).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(100)),
-                new Polygon(C1,C2,C3,C4,C5).setEmission(new Color(yellow1)).setMaterial(new Material().setkR(0.2).setkT(0.8).setKs(0.8).setShininess(100))
+                new Triangle(B6,C6,B6B1).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(100)),
+                new Triangle(C6,B6B1,C1).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(100)),
+                new Triangle(B6B1,C1,B1).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(100)),
+                new Polygon(C1,C2,C3,C4,C5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(100))
 
         );
+        // The Square
+        scene.geometries.add( new Polygon(new Point(0,-200,170),new Point(200,0,170),new Point(0,200,170),new Point(-200,0,170)
+                        ).setEmission(new Color(GRAY)).setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.8).setShininess(10)));
+
         scene.lights.add(new SpotLight(new Color(700, 400, 400), new Point(60, 50, 0), new Vector(0, 0, -1)) //
                 .setKl(4E-5).setKq(2E-7));
+        scene.lights.add( //
+                new SpotLight(new Color(400, 240, 0), new Point(-100, -100, 200), new Vector(1, 1, -3)) //
+                        .setKl(1E-5).setKq(1.5E-7));
         camera.setImageWriter(new ImageWriter("DiamondStage7", 1000, 1000)) //
                 .setRayTracer(new RayTracerBasic(scene)) //
                 .renderImage() //
