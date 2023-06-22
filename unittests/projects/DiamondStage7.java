@@ -28,42 +28,45 @@ public class DiamondStage7 {
                 new Point(0, 1000, 500),
                 new Vector(0, -1, 0),
                 new Vector(0, 0, 1)) //
-                .setVPSize(1000, 1000).setVPDistance(1000);
+                .setVPSize(1000, 1000).setVPDistance(1000) .antiAliasingOn(5,true) /*.multiThreadingOn()*/;
         scene.setBackground(new Color(BLACK));
         scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
         Point A = new Point(0, 0, 170);
+
         //vertices on the under side
-        Point B1 = new Point(100, 0, 300);
-        Point B2 = new Point(50, 87, 300);
-        Point B3 = new Point(-50, 87, 300);
-        Point B4 = new Point(-100, 0, 300);
-        Point B5 = new Point(-50, -87, 300);
-        Point B6 = new Point(50, -87, 300);
+        double num = 1.2;
+        Point B1 = new Point(100, 0, 300).mult(num);
+        Point B2 = new Point(50, 87, 300).mult(num);
+        Point B3 = new Point(-50, 87, 300).mult(num);
+        Point B4 = new Point(-100, 0, 300).mult(num);
+        Point B5 = new Point(-50, -87, 300).mult(num);
+        Point B6 = new Point(50, -87, 300).mult(num);
         //mid vertices on the underside
-        Point B1B2 = new Point(75, 43, 300);
-        Point B2B3 = new Point(0, 87, 300);
-        Point B3B4 = new Point(-75, 43, 300);
-        Point B4B5 = new Point(-75, -43, 300);
-        Point B5B6 = new Point(0, -87, 300);
-        Point B6B1 = new Point(75, -43, 300);
+        Point B1B2 = new Point(86, 49, 300).mult(num);
+        Point B2B3 = new Point(0, 100, 300).mult(num);
+        Point B3B4 = new Point(-86, 49, 300).mult(num);
+        Point B4B5 = new Point(-86, -49, 300).mult(num);
+        Point B5B6 = new Point(0, -100, 300).mult(num);
+        Point B6B1 = new Point(86, -49, 300).mult(num);
         //vertices on the upper side
-        Point C1 = new Point(50, 0, 350);
-        Point C2 = new Point(25, 43, 350);
-        Point C3 = new Point(-25, 43, 350);
-        Point C4 = new Point(-50, 0, 350);
-        Point C5 = new Point(-25, -43, 350);
-        Point C6 = new Point(25, -43, 350);
+        Point C1 = new Point(50, 0, 350).mult(num);
+        Point C2 = new Point(25, 43, 350).mult(num);
+        Point C3 = new Point(-25, 43, 350).mult(num);
+        Point C4 = new Point(-50, 0, 350).mult(num);
+        Point C5 = new Point(-25, -43, 350).mult(num);
+        Point C6 = new Point(25, -43, 350).mult(num);
         //mid vertices on the upper side
-        Point C1C2 = new Point(38, 22, 350);
-        Point C2C3 = new Point(0, 43, 350);
-        Point C3C4 = new Point(-38, 22, 350);
-        Point C4C5 = new Point(-38, -22, 350);
-        Point C5C6 = new Point(0, -43, 350);
-        Point C6C1 = new Point(38, -22, 350);
+        Point C1C2 = new Point(47, 27, 350).mult(num);
+        Point C2C3 = new Point(0, 47, 350).mult(num);
+        Point C3C4 = new Point(-47, 27, 350).mult(num);
+        Point C4C5 = new Point(-47, -27, 350).mult(num);
+        Point C5C6 = new Point(0, -47, 350).mult(num);
+        Point C6C1 = new Point(47, -27, 350).mult(num);
         //colors of Diamonds
         java.awt.Color colorDiamond1 = red ;
         java.awt.Color colorDiamond2 = pink;
-        //The Diamond
+
+        //The red Diamond
         scene.geometries.add(
                 //triangles on the bottom side
                 new Triangle(A,B1,B1B2).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
@@ -74,8 +77,6 @@ public class DiamondStage7 {
 
                 new Triangle(A,B3,B3B4).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
                 new Triangle(A,B4,B3B4).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
-
-                new Triangle(A,B4,B4B5).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
                 new Triangle(A,B5,B4B5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
 
                 new Triangle(A,B5,B5B6).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.2).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(1000)),
@@ -109,21 +110,83 @@ public class DiamondStage7 {
                 new Triangle(C6,B6B1,C1).setEmission(new Color(colorDiamond2)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(100)),
                 new Triangle(B6B1,C1,B1).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.6).setKs(0.8).setKd(0.2).setShininess(100)),
                 new Polygon(C1,C2,C3,C4,C5).setEmission(new Color(colorDiamond1)).setMaterial(new Material().setkR(0.4).setkT(0.2).setKs(0.8).setKd(0.2).setShininess(100))
-
         );
+
         // The Square
-        scene.geometries.add( new Polygon(new Point(0,-200,170),new Point(200,0,170),new Point(0,200,170),new Point(-200,0,170)
-                        ).setEmission(new Color(GRAY)).setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.8).setShininess(10)));
+        scene.geometries.add( new Polygon(new Point(0,-300,170),new Point(300,0,170),new Point(0,300,170),new Point(-300,0,170))
+                .setEmission(new Color(79,118,131))
+                        .setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.4).setShininess(10)),
+                new Polygon(new Point(0,-300,170),new Point(300,0,170),new Point(300,0,700),new Point(0,-300,700))
+                        .setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.4).setShininess(10)),
+                new Polygon(new Point(0,-300,170),new Point(0,-300,700),new Point(-300,0,700),new Point(-300,0,170))
+                        .setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.4).setShininess(10)));
+
+        /*scene.geometries.add(new Sphere( new Point(0,0,170),2000)
+                .setMaterial(
+                        new Material().setKd(0.25).setKs(0.8).setShininess(61)
+                                .setkR(0.6)
+                ));*/
+
+
 
         scene.lights.add(new SpotLight(new Color(700, 400, 400), new Point(60, 50, 0), new Vector(0, 0, -1)) //
                 .setKl(4E-5).setKq(2E-7));
-        scene.lights.add( //
-                new SpotLight(new Color(400, 240, 0), new Point(-100, -100, 200), new Vector(1, 1, -3)) //
+        scene.lights.add(
+                new SpotLight(new Color(83, 122, 195), new Point(-100, -100, 200), new Vector(1, 1, -3)) //
                         .setKl(1E-5).setKq(1.5E-7));
-        camera.setImageWriter(new ImageWriter("DiamondStage7", 1000, 1000)) //
-                .setRayTracer(new RayTracerBasic(scene)) //
-                .renderImage() //
-                .writeToImage();
+//        camera.setImageWriter(new ImageWriter("DiamondStage7.1", 1000, 1000)) //
+//                .setRayTracer(new RayTracerBasic(scene)) //
+//                .renderImage() //
+//                .writeToImage();
+
+        //TODO - PICTURES CAMERA
+        //move right
+//        for(int i = 0; i < 8; i=i+1) {
+//            String j = String.valueOf(i);
+//            camera.moveRightLeftCamera(new Point(i*80, 1000,500), new Point(0, 0, 500))
+//                    .setRayTracer(new RayTracerBasic(scene))
+//                    .setImageWriter(new ImageWriter("Red_Diamond_Right"+j, 1000, 1000))
+//                    .renderImage();
+//            camera.writeToImage();
+//        }
+        //move left
+        for(int i = 0; i < 8; i=i+1) {
+            String j = String.valueOf(i+5);
+            camera.moveRightLeftCamera(new Point(-i*80, 1000,500), new Point(0, 0, 500))
+                    .setRayTracer(new RayTracerBasic(scene))
+                    .setImageWriter(new ImageWriter("Red_Diamond_Left"+j, 1000, 1000))
+                    .renderImage();
+            camera.writeToImage();
+        }
+        //move up
+//        for(int i = 0; i < 5; i=i+1) {
+//            String j = String.valueOf(i+10);
+//            camera.moveCamera(new Point(0, i*80, 0), new Point(0, 0, 1000))
+//                    .setRayTracer(new RayTracerBasic(scene))
+//                    .setImageWriter(new ImageWriter("whiskeyCup"+j, 1000, 1000))
+//                    .renderImage();
+//            camera.writeToImage();
+//        }
+        //move down
+//        for(int i = 0; i < 5; i=i+1) {
+//            String j = String.valueOf(i+15);
+//            camera.moveCamera(new Point(0, -i*80, 0), new Point(0, 0, 1000))
+//                    .setRayTracer(new RayTracerBasic(scene))
+//                    .setImageWriter(new ImageWriter("whiskeyCup"+j, 1000, 1000))
+//                    .renderImage();
+//            camera.writeToImage();
+//        }
+//        //rotate right
+//        for(int i = 0; i < 5; i=i+1) {
+//            String j = String.valueOf(i+20);
+//            camera.rotateCamera(9)
+//                    .setViewPlaneSize(700, 700).setViewPlaneDistance(700)
+//                    .setRayTracer(new RayTracerBasic(scene))
+//                    .setImageWriter(new ImageWriter("whiskeyCup" + j, 1000, 1000))
+//                    .renderImage();
+//            camera.writeToImage();
+//        }
+
 
     }
 }

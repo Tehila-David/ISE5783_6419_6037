@@ -1,8 +1,9 @@
 package primitives;
 
-
+//import org.ejml.data.SimpleMatrix;
 import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
+
 
 /**
  * The Vector class represents a mathematical vector in 3D space. It extends the Point class
@@ -11,6 +12,9 @@ import static primitives.Util.isZero;
  * and squared length.
  */
 public class Vector extends Point {
+    public static Vector X = new Vector(1,0,0);
+    public static Vector Y = new Vector(0,1,0);
+    public static Vector Z = new Vector(0,0,1);
 
     /**
      * Constructs a new vector with the specified x, y, and z components.
@@ -120,6 +124,10 @@ public class Vector extends Point {
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
+
+
+
 
 
 }

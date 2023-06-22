@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/Pixel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/projects/ImageStage7.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +101,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiamondStage7.createImage">
+  <component name="RunManager" selected="JUnit.DiamondStage7">
     <configuration name="All in ISE5783_6419_6037" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_6419_6037" />
       <option name="PACKAGE_NAME" value="" />
@@ -167,9 +173,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DiamondStage7" />
         <item itemvalue="JUnit.DiamondStage7.createImage" />
         <item itemvalue="JUnit.All in ISE5783_6419_6037" />
-        <item itemvalue="JUnit.DiamondStage7" />
         <item itemvalue="JUnit.ImageStage7" />
         <item itemvalue="JUnit.CreatingPicture" />
       </list>
@@ -352,7 +358,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686568357802</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎-00025" summary="Red Diamond with Shadows and transparency!">
+      <created>1687074208433</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687074208433</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,7 +404,24 @@
     <MESSAGE value="The picture not work! the location of camera not good!" />
     <MESSAGE value="The picture not work! the location of camera not good!!" />
     <MESSAGE value="Red Diamond without Shadows!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Red Diamond without Shadows!" />
+    <MESSAGE value="Red Diamond with Shadows and transparency!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Red Diamond with Shadows and transparency!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AppData/Local/Temp/Temp1_ISE5782_3096_7612-MP01 (3).zip/ISE5782_3096_7612-MP01/src/renderer/BlackBoard.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AppData/Local/Temp/Temp1_ISE5782_3096_7612-MP01 (3).zip/ISE5782_3096_7612-MP01/src/renderer/BlackBoard.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -61,12 +61,13 @@ public class Triangle extends Polygon {
             // one of the cross products constructed the zero vector -> intersect the vertex or the edge of the triangle
             return null;
         }
+
     }
 
-
-
-
-
+    @Override
+    public Polygon mult(double num) {
+        return super.mult(num);
+    }
 }
 
 

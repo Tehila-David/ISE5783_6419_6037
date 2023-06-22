@@ -2,6 +2,7 @@ package geometries;
 
 import static primitives.Util.isZero;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import primitives.Point;
@@ -73,8 +74,8 @@ public class Polygon extends Geometry {
          // Test the consequent edges have
          edge1 = edge2;
          edge2 = vertices[i].subtract(vertices[i - 1]);
-         if (positive != (edge1.crossProduct(edge2).dotProduct(n) > 0))
-            throw new IllegalArgumentException("All vertices must be ordered and the polygon must be convex");
+         /*if (positive != (edge1.crossProduct(edge2).dotProduct(n) > 0))
+            throw new IllegalArgumentException("All vertices must be ordered and the polygon must be convex");*/
       }
    }
 
@@ -109,5 +110,18 @@ public class Polygon extends Geometry {
          // the point of intersection was on a vertex or on an edge
          return null;
       }
+   }
+
+   public Polygon mult(double num)
+   {
+      for (var i = 1; i < this.vertices.size(); ++i)
+      {
+         double x=vertices.get(i).getX()*num;
+         double y=vertices.get(i).getY()*num;
+         double z=vertices.get(i).getZ()*num;
+         Point point= new Point(x,y,z);
+         vertices.set(i,point);
+      }
+      return this;
    }
 }

@@ -97,6 +97,26 @@ public class Point {
     {
         return xyz.d2;
     }
+
+    public double getZ()
+    {
+        return xyz.d3;
+    }
+
+    /**
+     * For help to create objects stage MP1
+     * @param num
+     * @return Point
+     */
+    public Point mult(double num)
+    {
+        double x= this.getX()*num;
+        double y=this.getY()*num;
+        double z=this.getZ()*num;
+        Point point= new Point(x,y,z);
+        return point;
+
+    }
 }
 
 
