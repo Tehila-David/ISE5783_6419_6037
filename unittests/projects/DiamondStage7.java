@@ -1,9 +1,8 @@
 package projects;
-import geometries.Plane;
 import geometries.Polygon;
-import geometries.Sphere;
 import geometries.Triangle;
 import lighting.AmbientLight;
+import lighting.PointLight;
 import lighting.SpotLight;
 import org.junit.jupiter.api.Test;
 import primitives.Color;
@@ -20,15 +19,15 @@ import static java.awt.Color.BLACK;
 
 public class DiamondStage7 {
 
-    private Scene scene = new Scene("Test scene");
+    private Scene scene = new Scene("Final Scene");
 
     @Test
     void createImage() {
         Camera camera = new Camera(
                 new Point(0, 1000, 500),
                 new Vector(0, -1, 0),
-                new Vector(0, 0, 1)) //
-                .setVPSize(1000, 1000).setVPDistance(1000) .antiAliasingOn(5,true) /*.multiThreadingOn()*/;
+                new Vector(0, 0, 1))
+                .setVPSize(1000, 1000).setVPDistance(1000) .antiAliasingStart(9,true).multiThreadingStart();
         scene.setBackground(new Color(BLACK));
         scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
         Point A = new Point(0, 0, 170);
@@ -134,12 +133,15 @@ public class DiamondStage7 {
         scene.lights.add(
                 new SpotLight(new Color(83, 122, 195), new Point(-100, -100, 200), new Vector(1, 1, -3)) //
                         .setKl(1E-5).setKq(1.5E-7));
-//        camera.setImageWriter(new ImageWriter("DiamondStage7.1", 1000, 1000)) //
-//                .setRayTracer(new RayTracerBasic(scene)) //
-//                .renderImage() //
-//                .writeToImage();
+        scene.lights.add(new PointLight(new Color(83, 122, 195), new Point(-100, -400, 800)).setKq(0.000001));
 
-        //TODO - PICTURES CAMERA
+        //TODO- adding light source
+        camera.setImageWriter(new ImageWriter("FinalDiamond - MP2 - without ", 1000, 1000)) //
+                .setRayTracer(new RayTracerBasic(scene)) //
+                .renderImage() //
+                .writeToImage();
+
+
         //move right
 //        for(int i = 0; i < 8; i=i+1) {
 //            String j = String.valueOf(i);
@@ -150,39 +152,11 @@ public class DiamondStage7 {
 //            camera.writeToImage();
 //        }
         //move left
-        for(int i = 0; i < 8; i=i+1) {
-            String j = String.valueOf(i+5);
-            camera.moveRightLeftCamera(new Point(-i*80, 1000,500), new Point(0, 0, 500))
-                    .setRayTracer(new RayTracerBasic(scene))
-                    .setImageWriter(new ImageWriter("Red_Diamond_Left"+j, 1000, 1000))
-                    .renderImage();
-            camera.writeToImage();
-        }
-        //move up
-//        for(int i = 0; i < 5; i=i+1) {
-//            String j = String.valueOf(i+10);
-//            camera.moveCamera(new Point(0, i*80, 0), new Point(0, 0, 1000))
+//        for(int i = 0; i < 8; i=i+1) {
+//            String j = String.valueOf(i+5);
+//            camera.moveRightLeftCamera(new Point(-i*80, 1000,500), new Point(0, 0, 500))
 //                    .setRayTracer(new RayTracerBasic(scene))
-//                    .setImageWriter(new ImageWriter("whiskeyCup"+j, 1000, 1000))
-//                    .renderImage();
-//            camera.writeToImage();
-//        }
-        //move down
-//        for(int i = 0; i < 5; i=i+1) {
-//            String j = String.valueOf(i+15);
-//            camera.moveCamera(new Point(0, -i*80, 0), new Point(0, 0, 1000))
-//                    .setRayTracer(new RayTracerBasic(scene))
-//                    .setImageWriter(new ImageWriter("whiskeyCup"+j, 1000, 1000))
-//                    .renderImage();
-//            camera.writeToImage();
-//        }
-//        //rotate right
-//        for(int i = 0; i < 5; i=i+1) {
-//            String j = String.valueOf(i+20);
-//            camera.rotateCamera(9)
-//                    .setViewPlaneSize(700, 700).setViewPlaneDistance(700)
-//                    .setRayTracer(new RayTracerBasic(scene))
-//                    .setImageWriter(new ImageWriter("whiskeyCup" + j, 1000, 1000))
+//                    .setImageWriter(new ImageWriter("Red_Diamond_Left"+j, 1000, 1000))
 //                    .renderImage();
 //            camera.writeToImage();
 //        }

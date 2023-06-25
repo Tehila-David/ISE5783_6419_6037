@@ -19,6 +19,7 @@ public class SpotLight extends PointLight {
         this.direction = direction.normalize();
     }
 
+    //TODO: BONUS - The spot with a narrower light beam, stage 6
     /**
      * Getting a spot lighting source with a narrower skin beam
      * @param specularN

@@ -60,6 +60,7 @@ public abstract class Intersectable {
         return findGeoIntersectionsHelper(ray, maxDistance);
     }
 
+    //TODO: BONUS - Solving the shading distance problem in way 2 , stage 7
     /**
      * find intersections between a ray and a geometry
      *
