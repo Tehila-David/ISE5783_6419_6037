@@ -119,12 +119,7 @@ public class DiamondStage7 {
                         .setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.4).setShininess(10)),
                 new Polygon(new Point(0, -300, 170), new Point(0, -300, 700), new Point(-300, 0, 700), new Point(-300, 0, 170))
                         .setMaterial(new Material().setKd(0.7).setKs(0.3).setkR(0.2).setkT(0.4).setShininess(10)));
-
-        /*scene.geometries.add(new Sphere( new Point(0,0,170),2000)
-                .setMaterial(
-                        new Material().setKd(0.25).setKs(0.8).setShininess(61)
-                                .setkR(0.6)
-                ));*/
+        
 
 
         scene.lights.add(new SpotLight(new Color(700, 400, 400), new Point(60, 50, 0), new Vector(0, 0, -1)) //
