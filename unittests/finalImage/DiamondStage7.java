@@ -17,7 +17,7 @@ import scene.Scene;
 
 import static java.awt.Color.*;
 
-public class finalDiamond {
+public class DiamondStage7 {
 
     private Scene scene = new Scene("Final Scene");
 

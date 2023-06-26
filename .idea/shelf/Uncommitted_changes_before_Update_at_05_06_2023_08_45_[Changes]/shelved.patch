@@ -1,0 +1,16 @@
+Index: unittests/CameraTests/CameraTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/unittests/CameraTests/CameraTest.java b/unittests/cameraTests/CameraTest.java
+rename from unittests/CameraTests/CameraTest.java
+rename to unittests/cameraTests/CameraTest.java
+--- a/unittests/CameraTests/CameraTest.java	
++++ b/unittests/cameraTests/CameraTest.java	
+@@ -1,4 +1,4 @@
+-package CameraTests;
++package cameraTests;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 

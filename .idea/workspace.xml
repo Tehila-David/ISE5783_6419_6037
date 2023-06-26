@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18fb7507-197d-411a-9516-fe7a0c172def" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Pixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Pixel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/projects/DiamondStage7.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/finalImage/finalDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/finalImage/finalDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/finalImage/DiamondStage7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,7 +384,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687712424402</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL‎-00028" summary="Completion of a mini-project - a lecturer test was performed">
+      <created>1687767171437</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687767171437</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,7 +407,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="23225" />
     <MESSAGE value="finish" />
     <MESSAGE value="almost finish (Sphere -radius)" />
     <MESSAGE value="finish - Stage1" />
@@ -429,7 +431,8 @@
     <MESSAGE value="Red Diamond with Shadows and transparency!" />
     <MESSAGE value="finish MP1+MP2 -&gt; check threads.." />
     <MESSAGE value="Finish MP2 include threads" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish MP2 include threads" />
+    <MESSAGE value="Completion of a mini-project - a lecturer test was performed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completion of a mini-project - a lecturer test was performed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
