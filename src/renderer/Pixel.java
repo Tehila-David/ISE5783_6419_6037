@@ -7,7 +7,6 @@ package renderer;
  * thread.
  *
  * @author Dan
- *
  */
 class Pixel {
     private static int maxRows = 0;
