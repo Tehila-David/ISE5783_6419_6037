@@ -8,4 +8,5 @@ As part of a Software Engineering Course.
 - java
 - Agile methodologies
 - TDD
-- ![Graphic Diamond](https://github.com/Tehila-David/ISE5783_6419_6037/blob/master/Graphic%20Diamond.gif)
+# Illustration
+![Graphic Diamond](https://github.com/Tehila-David/ISE5783_6419_6037/blob/master/Graphic%20Diamond.gif)
