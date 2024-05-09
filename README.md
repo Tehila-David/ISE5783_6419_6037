@@ -8,3 +8,4 @@ As part of a Software Engineering Course.
 - java
 - Agile methodologies
 - TDD
+  ![Final Diamond - with improvements](Final Diamond - with improvements.png)
