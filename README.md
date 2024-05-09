@@ -9,4 +9,4 @@ As part of a Software Engineering Course.
 - Agile methodologies
 - TDD
 # Illustration
-<img src="https://github.com/Tehila-David/ISE5783_6419_6037/blob/master/Graphic%20Diamond.gif" width="50%">
+<img src="https://github.com/Tehila-David/ISE5783_6419_6037/blob/master/Graphic%20Diamond.gif" width="70%">
