@@ -8,4 +8,4 @@ As part of a Software Engineering Course.
 - java
 - Agile methodologies
 - TDD
-  ![Final Diamond - with improvements]([Final Diamond - with improvements.png](https://github.com/Tehila-David/ISE5783_6419_6037/blob/master/FinalDiamond%20-%20%20without%20improvements.png))
+  ![Final Diamond - with improvements](Final Diamond - with improvements.png)
